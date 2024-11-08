@@ -1,6 +1,6 @@
 ---
 title: Snippet Designer 2022 - Simplifying Code Snippet Creation
-date: 2024-02-07 14:00:00 +0100
+date: 2024-02-14 14:00:00 +0100
 categories: [Development, Visual Studio]
 tags: [visual-studio, productivity, snippets, extensions]
 ---
