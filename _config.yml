@@ -14,12 +14,11 @@ timezone: Europe/Warsaw
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Geeks Club # the main title
+title: Łukasz Granica # the main title
 
-tagline: Geeks Club Homepage # it will display as the subtitle
+tagline: Łukasz Granica Homepage # it will display as the subtitle
 
-description: >- # used by seo meta and the atom feed
-  Hey there, and welcome to a place that doesn’t officially exist! Yes, you heard that right. This is the Geeks Club—a hidden haven for all passionate developers who live and breathe code. Think of it as a place where we chat about tech mysteries, exchange ideas, and maybe even figure out how to debug the mysteries of life (or at least .NET!).
+description: Hey there, and welcome to a place for all passionate developers who live and breathe code. Think of it as a place where we chat about tech mysteries, exchange ideas, and maybe even figure out how to debug the mysteries of life (or at least .NET!).
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
