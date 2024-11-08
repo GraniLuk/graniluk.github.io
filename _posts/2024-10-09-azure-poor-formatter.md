@@ -1,7 +1,7 @@
 ---
 title: Azure Poor Formatter - A T-SQL Formatting Extension
 date: 2024-10-09 11:00:00 +0100
-categories: [Development, Azure]
+categories: [Development, Azure Data Studio]
 tags: [azure-data-studio, sql, formatting, extension]
 ---
 
