@@ -1,7 +1,7 @@
 ---
 title: Cursor Review - AI-Powered Code Editor
 date: 2024-11-06 13:00:00 +0100
-categories: [Development, Tools]
+categories: [Development, IDE]
 tags: [ide, ai, code-editor]
 ---
 
