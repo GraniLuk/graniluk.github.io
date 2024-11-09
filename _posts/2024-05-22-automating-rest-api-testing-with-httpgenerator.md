@@ -76,7 +76,3 @@ The `httpgenerator` tool is a valuable asset for developers working with RESTful
 For more information, visit the [httpgenerator GitHub repository](https://github.com/christianhelle/httpgenerator).
 
 ---
-
-You can create a new file named `2024-05-22-automating-rest-api-testing-with-httpgenerator.md` in your website's posts directory and add the content above.
-
-```
