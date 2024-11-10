@@ -4,7 +4,7 @@ date: 2024-11-06 17:00:00 +0100
 categories: [.NET, Visual Studio]
 tags: [visual-studio, shortcuts, productivity]
 image:
-   path: /assets/img/Visual_Studio_Icon.svg
+   path: /assets/img/Visual_Studio_Icon.png
    alt: visual studio logo
 ---
 

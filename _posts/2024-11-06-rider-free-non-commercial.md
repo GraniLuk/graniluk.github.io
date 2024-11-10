@@ -4,7 +4,7 @@ date: 2024-11-06 16:00:00 +0100
 categories: [.NET, IDE]
 tags: [jetbrains, rider, ide]
 image:
-   path: /assets/img/JetBrains_Rider_Icon.svg
+   path: /assets/img/JetBrains_Rider_Icon.png
    alt: JetBrains Rider logo
 ---
 
