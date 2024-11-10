@@ -107,3 +107,4 @@ Just to make sure that everyone follows the rules, we can add a simple check to 
 ```yaml
 - name: Check code format
   run: dotnet format --verify-no-changes
+```
