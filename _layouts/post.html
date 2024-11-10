@@ -25,18 +25,3 @@ layout: default
     {% endfor %}
   </ul>
 </div>
-
-<!-- Series links -->
-{% if page.is_series == true %}
-<h3 class="text-success p-3 pb-0">{{ page.series_title | upcase }} series</h3>
-{% assign posts = site.posts | where: "is_series", true | where: "series_title", page.series_title | sort: 'date' %}
- 
-{% for post in posts %}
-        {% if post.title == page.title %}
- <p class="nav-link bullet-pointer mb-0">{{ post.title }}</p>
-        {% else %}
- <a class="nav-link bullet-hash" href="https://opensource.com/%7B%7B%20post.url%20%7D%7D">{{ post.title }}</a>
-        {% endif %}
-{% endfor %}
-
-{% endif %}{% endraw %}
