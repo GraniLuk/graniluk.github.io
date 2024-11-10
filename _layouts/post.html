@@ -14,14 +14,4 @@ layout: default
 </div>
 {% endif %}
 
-<div class="series-toc">
-  <h2>Series: {{ include.series }}</h2>
-  <ul>
-    {% assign series_posts = site.posts | where: "series", include.series %}
-    {% for post in series_posts %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+{{ content }
