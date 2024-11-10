@@ -3,7 +3,7 @@ layout: default
 ---
 {% if page.series %}
 <div>
-  <h4>This post is part of a series: {{ page.series }}</h4>
+  <h1>This post is part of a series: {{ page.series }}</h1>
   <ol>
     {% assign posts = site.posts | where: "series", page.series | sort: "date" %}
     {% for post in posts %}
