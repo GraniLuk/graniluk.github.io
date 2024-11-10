@@ -1,6 +1,6 @@
 ---
 title: Understanding the Main Section of .editorconfig
-date: 2024-11-15 12:00:00 +0100
+date: 2024-11-10 12:00:00 +0100
 categories: [.NET, Code Quality]
 tags: [editorconfig, coding-standards, best-practices]
 series: Code Cleanup
