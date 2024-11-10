@@ -3,6 +3,9 @@ title: Select All Matching Strings with ALT+SHIFT+.
 date: 2024-11-06 17:00:00 +0100
 categories: [.NET, Visual Studio]
 tags: [visual-studio, shortcuts, productivity]
+image:
+   path: /assets/img/Visual_Studio_Icon.svg
+   alt: visual studio logo
 ---
 
 **Select All Matching Strings with ALT+SHIFT+.**: A Handy Visual Studio Shortcut

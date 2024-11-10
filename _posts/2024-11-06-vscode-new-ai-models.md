@@ -3,6 +3,9 @@ title: Visual Studio Code New AI Models
 date: 2024-11-06 18:00:00 +0100
 categories: [.NET, VS Code]
 tags: [vs-code, ai, development-tools]
+image:
+   path: /assets/img/week202448/robotsWithGuns.png
+   alt: Robots with guns
 ---
 
 Visual Studio Code is bringing in the big AI guns, adding support for Anthropic's Claude 3.5 Sonnet, Google's Gemini 1.5 Pro, and OpenAI's o1-preview. Here's why that's huge:
