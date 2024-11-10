@@ -85,34 +85,25 @@ Visual studio has built-in editor to update settings easily, it opens by default
 ## How to format code automatically? 
 
 ### For one file
-
 - **Format Document:** `Ctrl + K, Ctrl + D`
 
 ### For entire solution
-
-1. Set Format Document section in Code Cleanup profile**
+1. **Set Format Document section in Code Cleanup profile**
 ![ProfileSetupWithFormat](/assets/img/week202448/codeCleanUpFormat.png)
 
-2. Run Code Cleanup on solution**
+2. **Run Code Cleanup on solution**
 ![RunCodeCleanUpOnSolution](/assets/img/week202448/runCodeCleanUpOnSolution.png)
 
 ## How to make sure that new code will be properly formatted?
 
-1. Enable code cleanup on save
+1. **Enable code cleanup on save**
 ![RunCodeCleanupOnSave](/assets/img/cleanupOnSave.jpeg)
 It will automatically format code on save, so we don't need to worry about it.
 
-2. Integrate a step in your CI pipeline to run a formatting check:
+2. **Integrate a step in your CI pipeline to run a formatting check**
 
-Just to make sure, that everyone follow the rules we can add simple check to our CI pipeline.
+Just to make sure that everyone follows the rules, we can add a simple check to our CI pipeline:
 
 ```yaml
 - name: Check code format
   run: dotnet format --verify-no-changes
-```
-
-
-
-
-
-
