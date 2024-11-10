@@ -1,6 +1,6 @@
 ---
 title: Enforcing Code Style with .editorconfig and Static Analysis in .NET
-date: 2024-10-01 12:00:00 +0100
+date: 2024-11-10 12:00:00 +0100
 categories: [.NET, Code Quality]
 tags: [code cleanup, static analysis, .editorconfig, coding standards, .NET]
 series: Code Cleanup
