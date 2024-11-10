@@ -1,7 +1,7 @@
 ---
 title: Leveraging .NET Analyzers for Better Code Quality
 date: 2024-05-08 12:00:00 +0100
-categories: [Development, .NET]
+categories: [.NET, .NET]
 tags: [dotnet, code-analysis, analyzers, code-quality]
 ---
 

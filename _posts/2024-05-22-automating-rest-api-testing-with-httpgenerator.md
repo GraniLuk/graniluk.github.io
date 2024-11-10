@@ -1,7 +1,7 @@
 ---
 title: Automating REST API Testing with HttpGenerator
 date: 2024-05-22 12:00:00 +0100
-categories: [Development, Tools]
+categories: [.NET, Tools]
 tags: [httpgenerator, .NET, REST, API, OpenAPI, Swagger, Testing]
 ---
 

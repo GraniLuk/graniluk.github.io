@@ -1,7 +1,7 @@
 ---
 title: Understanding the Impact of Roslyn Analyzers on Build Time
 date: 2024-06-19 12:00:00 +0100
-categories: [Development, .NET]
+categories: [.NET, MSBuild]
 tags: [csharp, roslyn, analyzers, msbuild, performance]
 ---
 

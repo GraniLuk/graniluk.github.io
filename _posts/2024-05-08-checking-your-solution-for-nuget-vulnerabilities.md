@@ -1,7 +1,7 @@
 ---
 title: Checking Your Solution for NuGet Vulnerabilities or Deprecated Packages
 date: 2024-05-08 12:00:00 +0100
-categories: [Development, .NET]
+categories: [.NET, Nuget]
 tags: [nuget, security, vulnerabilities, dotnet, packages]
 ---
 

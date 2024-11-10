@@ -1,7 +1,7 @@
 ---
 title: Type Aliases - Making Code Clearer with Generics
 date: 2024-04-24 19:00:00 +0100
-categories: [Development, C#]
+categories: [.NET, Code Quality]
 tags: [csharp, clean-code, best-practices]
 ---
 

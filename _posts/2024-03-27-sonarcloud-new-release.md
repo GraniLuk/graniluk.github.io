@@ -1,7 +1,7 @@
 ---
 title: SonarCloud New Release - Addressing New Warnings in Sonar Way
 date: 2024-02-14 15:00:00 +0100
-categories: [Development, Code Quality]
+categories: [.NET, Code Quality]
 tags: [sonarcloud, code-analysis, static-analysis, quality]
 ---
 

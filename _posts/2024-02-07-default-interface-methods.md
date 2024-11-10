@@ -1,7 +1,7 @@
 ---
 title: Understanding Default Interface Methods in .NET 8
 date: 2024-02-07 12:00:00 +0100
-categories: [Development, .NET]
+categories: [.NET, C#]
 tags: [dotnet, csharp, interfaces, net8]
 ---
 

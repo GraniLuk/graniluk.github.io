@@ -1,7 +1,7 @@
 ---
 title: Code Cleanup on Save in Visual Studio 2022
 date: 2024-10-09 10:00:00 +0100
-categories: [Development, Visual Studio]
+categories: [.NET, Visual Studio]
 tags: [visual-studio, productivity, code-cleanup]
 image:
   path: /assets/img/cleanupOnSave.jpeg

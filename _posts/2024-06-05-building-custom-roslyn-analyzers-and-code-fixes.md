@@ -1,7 +1,7 @@
 ---
 title: Building Custom Roslyn Analyzers and Code Fixes
 date: 2024-06-05 12:00:00 +0100
-categories: [Development, Code Quality]
+categories: [.NET, Code Quality]
 tags: [csharp, roslyn, code-analysis, analyzers, code-quality]
 ---
 

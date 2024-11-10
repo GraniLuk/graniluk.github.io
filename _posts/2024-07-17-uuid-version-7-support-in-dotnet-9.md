@@ -1,7 +1,7 @@
 ---
 title: UUID Version 7 Support in .NET 9
 date: 2024-07-17 12:00:00 +0100
-categories: [Development, .NET]
+categories: [.NET, C#]
 tags: [UUID, GUID, .NET 9, C#, Development]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Useful Shortcuts in Visual Studio to Boost Productivity
 date: 2024-09-25 12:00:00 +0100
-categories: [Development, Tools]
+categories: [.NET, Visual Studio]
 tags: [Visual Studio, Productivity, Shortcuts, Tips]
 ---
 

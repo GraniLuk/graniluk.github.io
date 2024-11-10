@@ -1,7 +1,7 @@
 ---
 title: Exploring Primary Constructors in C# 12
 date: 2024-05-08 12:00:00 +0100
-categories: [Development, C#]
+categories: [.NET, C#]
 tags: [csharp, .NET, primary-constructors, coding]
 ---
 
