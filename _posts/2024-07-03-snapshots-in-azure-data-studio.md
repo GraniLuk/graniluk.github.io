@@ -1,5 +1,4 @@
 ---
-
 title: Snapshots in Azure Data Studio  
 date: 2024-07-03 12:00:00 +0100  
 categories: [Azure Data Studio, Tools]  
