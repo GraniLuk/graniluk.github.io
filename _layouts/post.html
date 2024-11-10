@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{% if page.series %}
+<div>
+  <h4>This post is part of a series: {{ page.series }}</h4>
+  <ol>
+    {% assign posts = site.posts | where: "series", page.series | sort: "date" %}
+    {% for post in posts %}
+    <li>{% if post.url == page.url %}{{ post.title }} <i>(this post)</i>{% else %}
+        <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}</li>
+    {% endfor %}
+  </ol>
+</div>
+{% endif %}
+
+<div class="series-toc">
+  <h2>Series: {{ include.series }}</h2>
+  <ul>
+    {% assign series_posts = site.posts | where: "series", include.series %}
+    {% for post in series_posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- Series links -->
+{% if page.is_series == true %}
+<h3 class="text-success p-3 pb-0">{{ page.series_title | upcase }} series</h3>
+{% assign posts = site.posts | where: "is_series", true | where: "series_title", page.series_title | sort: 'date' %}
+ 
+{% for post in posts %}
+        {% if post.title == page.title %}
+ <p class="nav-link bullet-pointer mb-0">{{ post.title }}</p>
+        {% else %}
+ <a class="nav-link bullet-hash" href="https://opensource.com/%7B%7B%20post.url%20%7D%7D">{{ post.title }}</a>
+        {% endif %}
+{% endfor %}
+
+{% endif %}{% endraw %}
