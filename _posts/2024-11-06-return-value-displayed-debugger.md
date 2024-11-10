@@ -1,7 +1,7 @@
 ---
 title: Return Value Displayed in Debugger
 date: 2024-11-06 14:00:00 +0100
-categories: [Development, Visual Studio]
+categories: [.NET, Visual Studio]
 tags: [visual-studio, debugging, development-tools]
 image:
   path: /assets/img/week202446/returnValue.png

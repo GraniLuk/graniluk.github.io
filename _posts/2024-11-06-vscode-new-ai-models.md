@@ -1,7 +1,7 @@
 ---
 title: Visual Studio Code New AI Models
 date: 2024-11-06 18:00:00 +0100
-categories: [Development, VS Code]
+categories: [.NET, VS Code]
 tags: [vs-code, ai, development-tools]
 ---
 

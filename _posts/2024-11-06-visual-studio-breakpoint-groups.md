@@ -1,7 +1,7 @@
 ---
 title: Export and Import Breakpoint Groups in Visual Studio
 date: 2024-11-06 12:00:00 +0100
-categories: [Development, Visual Studio]
+categories: [.NET, Visual Studio]
 tags: [visual-studio, debugging, breakpoints]
 image:
   path: /assets/img/breakpointGroupExport.gif

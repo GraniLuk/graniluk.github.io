@@ -1,7 +1,7 @@
 ---
 title: Dotnet Nuget Why - Track Down Package Dependencies
 date: 2024-11-06 15:00:00 +0100
-categories: [Development, .NET]
+categories: [.NET, Nuget]
 tags: [.net, nuget, dependencies]
 image:
   path: /assets/img/week202446/nugetWhy.png
