@@ -95,6 +95,19 @@ tail_includes:
         </div>
       </div>
     </div>
+
+    {% if page.series %}
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">This post is part of a series: {{ page.series }}</div>
+      <ol>
+        {% assign posts = site.posts | where: "series", page.series | sort: "date" %}
+        {% for post in posts %}
+        <li>{% if post.url == page.url %}<strong>{{ post.title }} <i>(this post)</i></strong>{% else %}
+            <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}</li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endif %}
   </header>
 
   {% if enable_toc %}
