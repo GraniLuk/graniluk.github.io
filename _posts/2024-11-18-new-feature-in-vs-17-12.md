@@ -4,7 +4,7 @@ date: 2024-11-18 12:00:00 +0100
 categories: [Visual Studio, Productivity]
 tags: [visual-studio, customization, productivity, NET9]
 image:
-  path: /assets/img/week202449/ColorIndicatorInPractice.gif
+  path: /assets/img/week202448/ColorIndicatorInPractice.gif
   alt: Setting Colors for Collapsed Text Indicator
 ---
 
