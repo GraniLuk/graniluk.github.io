@@ -1,4 +1,3 @@
-
 ---
 title: "New Feature in Visual Studio 17.12: Custom Colors for Collapsed Text Indicator"
 date: 2024-11-18 12:00:00 +0100
