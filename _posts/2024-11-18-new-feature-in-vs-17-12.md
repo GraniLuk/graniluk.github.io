@@ -28,7 +28,7 @@ In Visual Studio 17.12, you can now set custom colors for the collapsed text ind
 
 Here's a screenshot showing the settings:
 
-![Setting Colors for Collapsed Text Indicator](/assets/img/week202449/ColorIndicatorSetting.png)
+![Setting Colors for Collapsed Text Indicator](/assets/img/week202448/ColorIndicatorSetting.png)
 
 ## Collapsed Text Indicator in Practice
 
@@ -36,7 +36,7 @@ Once you've set your custom colors, the collapsed text indicator will appear in 
 
 ### Example in Action:
 
-![Collapsed Text Indicator in Practice](/assets/img/week202449/ColorIndicatorInPractice.gif)
+![Collapsed Text Indicator in Practice](/assets/img/week202448/ColorIndicatorInPractice.gif)
 
 This feature is particularly useful when working with large files or complex code structures, as it helps you quickly identify and navigate collapsed regions. Previously it was too easy to miss collapsed sections!
 
