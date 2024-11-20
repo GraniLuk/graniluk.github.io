@@ -55,7 +55,44 @@ For all new classes, the header will be automatically added if set in `.editorco
 
 ### Remove Unnecessary Using Directives (IDE0005)
 
-*Draft content for this section will be added later.*
+The `IDE0005` rule ensures that any unnecessary using directives are removed from your code. This helps keep your code clean and free of unused references, improving readability and reducing potential confusion.
+
+#### Example in .editorconfig
+
+To enforce this rule, add the following configuration to your `.editorconfig` file:
+
+```properties
+# .editorconfig
+[*.cs]
+dotnet_diagnostic.IDE0005.severity = warning
+```
+
+#### Removing Existing Unnecessary Usings
+
+To remove all existing unnecessary using directives from your code, you can use Visual Studio's Code Cleanup feature with the option "Remove unnecessary imports or usings":
+
+1. Open Visual Studio.
+2. Go to `Edit` > `Advanced` > `Remove Unused Usings`.
+3. Alternatively, you can use the Code Cleanup feature:
+   - Click on the broom icon at the bottom of the editor.
+   - Select the profile that includes "Remove unnecessary imports or usings".
+
+![Remove unnecessary imports or usings](path/to/screenshot.png)
+
+#### Automating Code Cleanup on Save
+
+To avoid adding new unnecessary using directives, you can configure Visual Studio to run Code Cleanup on save:
+
+1. Go to `Tools` > `Options`.
+2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
+3. Check the option "Run Code Cleanup profile on Save".
+4. Ensure your Code Cleanup profile includes the "Remove unnecessary imports or usings" option.
+
+![Run Code Cleanup profile on Save](path/to/screenshot.png)
+
+#### Enforcing the Rule in CI/CD Pipeline
+
+To ensure that no new unnecessary using directives are added to the repository, set the severity of this rule to warning and add a policy to your CI/CD pipeline to disallow new warnings in the code. This is a good practice to maintain code quality.
 
 ### 'using' Directive Placement (IDE0065)
 
