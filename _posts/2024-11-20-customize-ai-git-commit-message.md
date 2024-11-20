@@ -1,6 +1,6 @@
 ---
 title: Customize AI Git Commit Messages with GitHub Copilot in Visual Studio
-date: 2024-11-20 15:00:00 +0100
+date: 2024-11-20 12:00:00 +0100
 categories: [.NET, Visual Studio]
 tags: [git, commit messages, GitHub Copilot, Visual Studio]
 series: Code Cleanup
