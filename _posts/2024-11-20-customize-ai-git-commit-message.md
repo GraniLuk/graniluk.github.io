@@ -5,7 +5,7 @@ categories: [.NET, Visual Studio]
 tags: [git, commit messages, GitHub Copilot, Visual Studio]
 series: Code Cleanup
 image:
-  path: /assets/img/Visual_Studio_Icon.png
+  path: /assets/img/week202448/papirus.png
   alt: customize commit message
 ---
 
