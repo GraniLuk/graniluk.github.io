@@ -1,6 +1,6 @@
 ---
 title: Customize AI Git Commit Messages with GitHub Copilot in Visual Studio
-date: 2024-11-20 12:00:00 +0100
+date: 2024-11-20 13:00:00 +0100
 categories: [.NET, Visual Studio]
 tags: [git, commit messages, GitHub Copilot, Visual Studio]
 series: Code Cleanup
@@ -58,7 +58,10 @@ It will create messages like this:
 ```plaintext
 style: Consolidate `foreach` statement and opening brace
 
-The code has been modified to remove the line break between the `foreach` statement and its opening brace. Previously, the `foreach` statement and the opening brace were on separate lines, but now they are combined into a single line. This change improves the readability and consistency of the code.
+The code has been modified to remove the line break between the `foreach` statement
+and its opening brace. Previously, the `foreach` statement and the opening brace were
+on separate lines, but now they are combined into a single line. This change improves
+the readability and consistency of the code.
 ```
 
 ## Benefits of Customizing Commit Messages
