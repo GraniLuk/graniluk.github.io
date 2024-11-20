@@ -1,6 +1,6 @@
 ---
 title: "New Feature in C# 13: Params Collections"
-date: 2024-11-19 12:00:00 +0100
+date: 2024-11-20 12:00:00 +0100
 categories: [.NET, C#]
 tags: [csharp, params, collections, NET9]
 image:
