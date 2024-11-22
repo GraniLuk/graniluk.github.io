@@ -48,8 +48,8 @@ When this option is set, any new file created will automatically include the spe
 1. **Set Apply File Header Preferences section in Code Cleanup profile**
 ![Apply file header preferences](/assets/img/week202450/ApplyFileHeaderPreferences.png)
 
-2. **Run Code Cleanup on solution**
-![RunCodeCleanUpOnSolution](/assets/img/week202448/runCodeCleanUpOnSolution.png)
+2. **[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+
 
 #### How to make sure that new code will be properly formatted?
 
@@ -86,8 +86,7 @@ dotnet_diagnostic.IDE0005.severity = warning
 1. **Set Remove unnecessary imports or usings section in Code Cleanup profile**
 ![Remove unnecessary imports or usings](/assets/img/week202450/RemoveUnecessaryUsings.png)
 
-2. **Run Code Cleanup on solution**
-![RunCodeCleanUpOnSolution](/assets/img/week202448/runCodeCleanUpOnSolution.png)
+2. **[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 #### How to make sure that new code will be properly formatted?
 
@@ -170,8 +169,7 @@ To correct the placement of existing using directives, you can use Visual Studio
 1. **Set Remove unnecessary imports or usings section in Code Cleanup profile**
 ![Remove unnecessary imports or usings](/assets/img/week202450/ApplyUsingDirectivePlacementPreferences.png)
 
-2. **Run Code Cleanup on solution**
-![RunCodeCleanUpOnSolution](/assets/img/week202448/runCodeCleanUpOnSolution.png)
+2. **[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 #### How to make sure that new code will be properly formatted?
 
