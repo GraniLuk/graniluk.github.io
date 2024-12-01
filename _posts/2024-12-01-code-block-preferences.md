@@ -5,7 +5,7 @@ categories: [.NET, Code Quality]
 tags: [code cleanup, static analysis, .editorconfig, coding standards, .NET]
 series: Code Cleanup
 image:
-  path: /assets/img/week202451/codeBlocks.png
+  path: /assets/img/week202450/organizedBooks.png
   alt: code blocks
 ---
 
@@ -102,7 +102,7 @@ To ensure that new code is properly formatted with the required braces, configur
 3. Check the option "Run Code Cleanup profile on Save".
 4. Ensure your Code Cleanup profile includes the "Add braces" option.
 
-![Run Code Cleanup profile on Save](path/to/screenshot.png)
+**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 ### Use Simple 'using' Statement (IDE0063)
 
@@ -166,7 +166,7 @@ To ensure that new code is properly formatted with the simplified `using` statem
 3. Check the option "Run Code Cleanup profile on Save".
 4. Ensure your Code Cleanup profile includes the "Use simple 'using' statement" option.
 
-![Run Code Cleanup profile on Save](path/to/screenshot.png)
+**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 ### Namespace Declaration Preferences (IDE0160, IDE0161)
 
@@ -237,7 +237,7 @@ To ensure that new code is properly formatted with the preferred namespace decla
 3. Check the option "Run Code Cleanup profile on Save".
 4. Ensure your Code Cleanup profile includes the "Namespace declaration preferences" option.
 
-![Run Code Cleanup profile on Save](path/to/screenshot.png)
+**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 ### Remove Unnecessary Lambda Expression (IDE0200)
 
@@ -298,7 +298,7 @@ To ensure that new code is properly formatted without unnecessary lambda express
 3. Check the option "Run Code Cleanup profile on Save".
 4. Ensure your Code Cleanup profile includes the "Remove unnecessary lambda expression" option.
 
-![Run Code Cleanup profile on Save](path/to/screenshot.png)
+**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 ### Convert to Top-Level Statements (IDE0210)
 
@@ -372,7 +372,7 @@ To ensure that new code is properly formatted with top-level statements, configu
 3. Check the option "Run Code Cleanup profile on Save".
 4. Ensure your Code Cleanup profile includes the "Convert to top-level statements" option.
 
-![Run Code Cleanup profile on Save](path/to/screenshot.png)
+**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 ### Convert to 'Program.Main' Style Program (IDE0211)
 
@@ -446,7 +446,7 @@ To ensure that new code is properly formatted with the 'Program.Main' style, con
 3. Check the option "Run Code Cleanup profile on Save".
 4. Ensure your Code Cleanup profile includes the "Convert to 'Program.Main' style program" option.
 
-![Run Code Cleanup profile on Save](path/to/screenshot.png)
+**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 ### Use Primary Constructor (IDE0290)
 
@@ -521,7 +521,7 @@ To ensure that new code is properly formatted with primary constructors, configu
 3. Check the option "Run Code Cleanup profile on Save".
 4. Ensure your Code Cleanup profile includes the "Use primary constructor" option.
 
-![Run Code Cleanup profile on Save](path/to/screenshot.png)
+**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 Sure, here is the updated draft with a detailed description for "Prefer 'System.Threading.Lock' (IDE0330)" and the additional sections:
 
@@ -609,7 +609,7 @@ To ensure that new code is properly formatted with `System.Threading.Lock`, conf
 3. Check the option "Run Code Cleanup profile on Save".
 4. Ensure your Code Cleanup profile includes the "Prefer 'System.Threading.Lock'" option.
 
-![Run Code Cleanup profile on Save](path/to/screenshot.png)
+**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 ## Conclusion
 In this post, we explored various code-block preferences that can be enforced using `.editorconfig` and static analysis in .NET. By configuring those rules, you can maintain a clean and consistent codebase. Utilizing Visual Studio's Code Cleanup feature and configuring it to run on save ensures that both existing and new code adhere to these standards, improving overall code quality and maintainability.
