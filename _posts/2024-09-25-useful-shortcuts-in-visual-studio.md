@@ -2,7 +2,7 @@
 title: Useful Shortcuts in Visual Studio to Boost Productivity
 date: 2024-09-25 12:00:00 +0100
 categories: [.NET, Visual Studio]
-tags: [Visual Studio, Productivity, Shortcuts, Tips]
+tags: [visual-studio, Productivity, Shortcuts, Tips]
 ---
 
 Enhancing productivity in Visual Studio can significantly improve your coding efficiency. Here are some of my favorite tips and shortcuts that have made a noticeable difference in my daily workflow.
