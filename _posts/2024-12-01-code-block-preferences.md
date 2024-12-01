@@ -91,7 +91,7 @@ To refactor existing code and add braces where necessary, you can use Visual Stu
    - Click on the broom icon at the bottom of the editor.
    - Select the profile that includes "Add braces".
 
-![Add braces](path/to/screenshot.png)
+<!-- ![Add braces](path/to/screenshot.png) -->
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -155,7 +155,7 @@ To refactor existing code and apply the simplified `using` statement where neces
    - Click on the broom icon at the bottom of the editor.
    - Select the profile that includes "Use simple 'using' statement".
 
-![Use simple 'using' statement](path/to/screenshot.png)
+<!-- ![Use simple 'using' statement](path/to/screenshot.png) -->
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -226,7 +226,7 @@ To refactor existing code and apply the preferred namespace declaration style, y
    - Click on the broom icon at the bottom of the editor.
    - Select the profile that includes "Namespace declaration preferences".
 
-![Namespace declaration preferences](path/to/screenshot.png)
+<!-- ![Namespace declaration preferences](path/to/screenshot.png) -->
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -287,7 +287,7 @@ To refactor existing code and remove unnecessary lambda expressions, you can use
    - Click on the broom icon at the bottom of the editor.
    - Select the profile that includes "Remove unnecessary lambda expression".
 
-![Remove unnecessary lambda expression](path/to/screenshot.png)
+<!-- ![Remove unnecessary lambda expression](path/to/screenshot.png) -->
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -361,7 +361,7 @@ To refactor existing code and convert traditional `Main` methods to top-level st
    - Click on the broom icon at the bottom of the editor.
    - Select the profile that includes "Convert to top-level statements".
 
-![Convert to top-level statements](path/to/screenshot.png)
+<!-- ![Convert to top-level statements](path/to/screenshot.png) -->
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -435,7 +435,7 @@ To refactor existing code and convert top-level statements back to the tradition
    - Click on the broom icon at the bottom of the editor.
    - Select the profile that includes "Convert to 'Program.Main' style program".
 
-![Convert to 'Program.Main' style program](path/to/screenshot.png)
+<!-- ![Convert to 'Program.Main' style program](path/to/screenshot.png) -->
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -510,7 +510,7 @@ To refactor existing code and convert traditional constructors to primary constr
    - Click on the broom icon at the bottom of the editor.
    - Select the profile that includes "Use primary constructor".
 
-![Use primary constructor](path/to/screenshot.png)
+<!-- ![Use primary constructor](path/to/screenshot.png) -->
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -598,7 +598,7 @@ To refactor existing code and convert traditional lock statements to `System.Thr
    - Click on the broom icon at the bottom of the editor.
    - Select the profile that includes "Prefer 'System.Threading.Lock'".
 
-![Prefer 'System.Threading.Lock'](path/to/screenshot.png)
+<!-- ![Prefer 'System.Threading.Lock'](path/to/screenshot.png) -->
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
