@@ -99,7 +99,7 @@ As a workaround, you can use the Roslyn analyzer built into Visual Studio:
 2. Use Quick Actions (CTRL + .).
 3. Select "Add Braces" from the context menu.
 
-![Add Braces](path/to/screenshot.png)
+![Add Braces](/assets/img/week202450/AddBraces.png)
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -132,31 +132,42 @@ dotnet_diagnostic.IDE0063.severity = warning
 **true**: Use the simplified `using` statement
 
 ```csharp
-// Simplified using statement
-using var stream = new FileStream("path/to/file", FileMode.Open);
+void SimplifiedUsing()
+{
+    Console.WriteLine("Start of method");
+    using var a = new DisposableResource();
+    Console.WriteLine("Before method ends");
+} // a.Dispose() is called here, at the end of the method.
 ```
 
 **false**: Use the traditional `using` statement
 
 ```csharp
-// Traditional using statement
-using (var stream = new FileStream("path/to/file", FileMode.Open))
+void ClassicUsing()
 {
-    // Use the stream
+    Console.WriteLine("Start of method");
+    using (var a = new DisposableResource())
+    {
+        Console.WriteLine("Inside using block");
+    } // a.Dispose() is called here, at the end of the block.
+    Console.WriteLine("After using block");
 }
 ```
+
+#### When to Use:
+* Use simplified using var for cleaner, more readable code when the disposal timing aligns with the variable's scope.
+* Use classic using when you need tighter control over the disposal timing within a specific block.
 
 #### How to Refactor Existing Code?
 
 To refactor existing code and apply the simplified `using` statement where necessary, you can use Visual Studio's Code Cleanup feature:
 
-1. Open Visual Studio.
-2. Go to `Edit` > `Advanced` > `Format Document`.
-3. Alternatively, you can use the Code Cleanup feature:
-   - Click on the broom icon at the bottom of the editor.
-   - Select the profile that includes "Use simple 'using' statement".
+**We can refactor only from classis approach to simplfied.**
 
-<!-- ![Use simple 'using' statement](path/to/screenshot.png) -->
+1. **Set Remove unnecessary imports or usings section in Code Cleanup profile**
+![Apply using statement preferences](/assets/img/week202450/ApplyUsingStatementPreferences.png)
+
+2. **[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
