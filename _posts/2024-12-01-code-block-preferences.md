@@ -37,17 +37,6 @@ The `IDE0011` rule has three possible options: `true`, `false`, and `when_multil
 - **false**: Do not add braces to control blocks.
 - **when_multiline**: Add braces only when the control block spans multiple lines.
 
-#### Example in .editorconfig
-
-To enforce this rule, add the following configuration to your `.editorconfig` file:
-
-```properties
-# .editorconfig
-[*.cs]
-dotnet_style_require_braces = true
-dotnet_diagnostic.IDE0011.severity = warning
-```
-
 #### Code Examples
 
 **true**: Always add braces
@@ -81,6 +70,17 @@ if (condition)
 }
 ```
 
+#### Example in .editorconfig
+
+To enforce this rule, add the following configuration to your `.editorconfig` file:
+
+```properties
+# .editorconfig
+[*.cs]
+dotnet_style_require_braces = true
+dotnet_diagnostic.IDE0011.severity = warning
+```
+
 #### How to Refactor Existing Code?
 
 To refactor existing code and add braces where necessary, you can use Visual Studio's Code Cleanup feature:
@@ -103,7 +103,7 @@ As a workaround, you can use the Roslyn analyzer built into Visual Studio:
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file.
 
 ### Use Simple 'using' Statement (IDE0063)
 
