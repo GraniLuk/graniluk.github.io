@@ -89,20 +89,21 @@ To refactor existing code and add braces where necessary, you can use Visual Stu
 2. Go to `Edit` > `Advanced` > `Format Document`.
 3. Alternatively, you can use the Code Cleanup feature:
    - Click on the broom icon at the bottom of the editor.
-   - Select the profile that includes "Add braces".
+   - Select the profile that includes "add required braces for single-line control statements".
 
-<!-- ![Add braces](path/to/screenshot.png) -->
+However, this option will always add braces to all control blocks, even for single lines if `dotnet_style_require_braces = when_multiline` is set. 
+
+As a workaround, you can use the Roslyn analyzer built into Visual Studio:
+
+1. Find an occurrence of the `IDE0011` warning.
+2. Use Quick Actions (CTRL + .).
+3. Select "Add Braces" from the context menu.
+
+![Add Braces](path/to/screenshot.png)
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted with the required braces, configure Visual Studio to run Code Cleanup on save:
-
-1. Go to `Tools` > `Options`.
-2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
-3. Check the option "Run Code Cleanup profile on Save".
-4. Ensure your Code Cleanup profile includes the "Add braces" option.
-
-**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
 
 ### Use Simple 'using' Statement (IDE0063)
 
@@ -159,14 +160,7 @@ To refactor existing code and apply the simplified `using` statement where neces
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted with the simplified `using` statement, configure Visual Studio to run Code Cleanup on save:
-
-1. Go to `Tools` > `Options`.
-2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
-3. Check the option "Run Code Cleanup profile on Save".
-4. Ensure your Code Cleanup profile includes the "Use simple 'using' statement" option.
-
-**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
 
 ### Namespace Declaration Preferences (IDE0160, IDE0161)
 
@@ -230,14 +224,7 @@ To refactor existing code and apply the preferred namespace declaration style, y
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted with the preferred namespace declaration style, configure Visual Studio to run Code Cleanup on save:
-
-1. Go to `Tools` > `Options`.
-2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
-3. Check the option "Run Code Cleanup profile on Save".
-4. Ensure your Code Cleanup profile includes the "Namespace declaration preferences" option.
-
-**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
 
 ### Remove Unnecessary Lambda Expression (IDE0200)
 
@@ -291,14 +278,7 @@ To refactor existing code and remove unnecessary lambda expressions, you can use
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted without unnecessary lambda expressions, configure Visual Studio to run Code Cleanup on save:
-
-1. Go to `Tools` > `Options`.
-2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
-3. Check the option "Run Code Cleanup profile on Save".
-4. Ensure your Code Cleanup profile includes the "Remove unnecessary lambda expression" option.
-
-**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
 
 ### Convert to Top-Level Statements (IDE0210)
 
@@ -365,14 +345,7 @@ To refactor existing code and convert traditional `Main` methods to top-level st
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted with top-level statements, configure Visual Studio to run Code Cleanup on save:
-
-1. Go to `Tools` > `Options`.
-2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
-3. Check the option "Run Code Cleanup profile on Save".
-4. Ensure your Code Cleanup profile includes the "Convert to top-level statements" option.
-
-**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
 
 ### Convert to 'Program.Main' Style Program (IDE0211)
 
@@ -439,14 +412,7 @@ To refactor existing code and convert top-level statements back to the tradition
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted with the 'Program.Main' style, configure Visual Studio to run Code Cleanup on save:
-
-1. Go to `Tools` > `Options`.
-2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
-3. Check the option "Run Code Cleanup profile on Save".
-4. Ensure your Code Cleanup profile includes the "Convert to 'Program.Main' style program" option.
-
-**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
 
 ### Use Primary Constructor (IDE0290)
 
@@ -514,18 +480,8 @@ To refactor existing code and convert traditional constructors to primary constr
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted with primary constructors, configure Visual Studio to run Code Cleanup on save:
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
 
-1. Go to `Tools` > `Options`.
-2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
-3. Check the option "Run Code Cleanup profile on Save".
-4. Ensure your Code Cleanup profile includes the "Use primary constructor" option.
-
-**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
-
-Sure, here is the updated draft with a detailed description for "Prefer 'System.Threading.Lock' (IDE0330)" and the additional sections:
-
-```markdown
 ### Prefer 'System.Threading.Lock' (IDE0330)
 
 The `IDE0330` rule enforces the use of `System.Threading.Lock` for thread synchronization, improving code consistency and reliability.
@@ -602,14 +558,7 @@ To refactor existing code and convert traditional lock statements to `System.Thr
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted with `System.Threading.Lock`, configure Visual Studio to run Code Cleanup on save:
-
-1. Go to `Tools` > `Options`.
-2. Navigate to `Text Editor` > `C#` > `Code Style` > `Code Cleanup`.
-3. Check the option "Run Code Cleanup profile on Save".
-4. Ensure your Code Cleanup profile includes the "Prefer 'System.Threading.Lock'" option.
-
-**[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
 
 ## Conclusion
 In this post, we explored various code-block preferences that can be enforced using `.editorconfig` and static analysis in .NET. By configuring those rules, you can maintain a clean and consistent codebase. Utilizing Visual Studio's Code Cleanup feature and configuring it to run on save ensures that both existing and new code adhere to these standards, improving overall code quality and maintainability.
