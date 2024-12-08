@@ -60,7 +60,7 @@ analytics:
   google:
     id: G-RR059N8JCB
   goatcounter:
-    id: # fill in your GoatCounter ID
+    id: 09081992
   umami:
     id: # fill in your Umami ID
     domain: # fill in your Umami domain
