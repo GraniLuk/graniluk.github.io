@@ -214,8 +214,9 @@ exclude:
   - "*.config.js"
   - package*.json
 
-gems:
+plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 jekyll-archives:
   enabled: [categories, tags]
