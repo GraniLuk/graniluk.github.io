@@ -24,83 +24,87 @@ With over 6000 classes to convert, manual modification wasn't practical. After a
 ## The Script Explained
 
 1. **Initial Setup and Project Filtering**
-```powershell
-Write-Host "Starting namespace conversion script..." -ForegroundColor Cyan
 
-# Find and exclude .NET Standard 2.0 projects
-$projectFiles = Get-ChildItem -Path . -Filter *.csproj -Recurse
-$excludeDirs = @()
-```
+    ```powershell
+    Write-Host "Starting namespace conversion script..." -ForegroundColor Cyan
+    # Find and exclude .NET Standard 2.0 projects
+    $projectFiles = Get-ChildItem -Path . -Filter *.csproj -Recurse
+    $excludeDirs = @()
+    ```
 
-This section initializes the script and creates an array to store directories to exclude.
+    This section initializes the script and creates an array to store directories to exclude.
 
 2. **Finding .NET Standard Projects**
-```powershell
-foreach ($proj in $projectFiles) {
-    $content = Get-Content $proj.FullName -Raw
-    if ($content -match '<TargetFramework>netstandard2.0</TargetFramework>') {
-        Write-Host "Excluding .NET Standard 2.0 project: $($proj.FullName)" -ForegroundColor Yellow
-        $excludeDirs += $proj.Directory.FullName
+
+    ```powershell
+    foreach ($proj in $projectFiles) {
+        $content = Get-Content $proj.FullName -Raw
+        if ($content -match '<TargetFramework>netstandard2.0</TargetFramework>') {
+            Write-Host "Excluding .NET Standard 2.0 project: $($proj.FullName)" -ForegroundColor Yellow
+            $excludeDirs += $proj.Directory.FullName
+        }
     }
-}
-```
-This loop identifies all .NET Standard 2.0 projects by checking their project files and adds their directories to the exclusion list.
+    ```
+
+    This loop identifies all .NET Standard 2.0 projects by checking their project files and adds their directories to the exclusion list.
 
 3. **File Collection**
-```powershell
-$files = Get-ChildItem -Path . -Filter *.cs -Recurse | 
-    Where-Object { 
-        $file = $_
-        -not ($excludeDirs | Where-Object { $file.FullName.StartsWith($_) })
-    }
-```
-Gets all .cs files except those in excluded directories.
+
+    ```powershell
+    $files = Get-ChildItem -Path . -Filter *.cs -Recurse | 
+        Where-Object { 
+            $file = $_
+            -not ($excludeDirs | Where-Object { $file.FullName.StartsWith($_) })
+        }
+    ```
+
+    Gets all .cs files except those in excluded directories.
 
 4. **Processing Loop**
-```powershell
-foreach ($file in $files) {
-    # Read file content
-    $content = Get-Content $file.FullName -Raw
-    
-    # Skip if already using file-scoped namespace
-    if ($content -match "namespace .+;") {
-        # ...logging code...
-        continue
-    }
-```
-Reads each file and checks if it already uses file-scoped namespaces.
+    ```powershell
+    foreach ($file in $files) {
+        # Read file content
+        $content = Get-Content $file.FullName -Raw
+        
+        # Skip if already using file-scoped namespace
+        if ($content -match "namespace .+;") {
+            # ...logging code...
+            continue
+        }
+    ```
+    Reads each file and checks if it already uses file-scoped namespaces.
 
 5. **Conversion Logic**
-```powershell
-    # Convert namespace syntax
-    $newContent = $content -replace '(namespace [^\s{]+)\s*\{(\r?\n[\s\S]+?)\}[\s]*$', '$1;$2'
-    # Clean up extra blank lines
-    $newContent = $newContent -replace '(\r?\n\s*){3,}', "`n`n"
-```
-The core conversion using regex patterns:
-- First pattern converts traditional namespace to file-scoped
-  - `(namespace [^\s{]+)\s*\{(\r?\n[\s\S]+?)\}[\s]*$`: This pattern matches the traditional namespace declaration and captures the namespace name and its contents. The `namespace [^\s{]+` part matches the namespace keyword followed by the namespace name. The `\s*\{` part matches any whitespace followed by an opening brace. The `(\r?\n[\s\S]+?)\}` part captures the contents of the namespace, including newlines, until the closing brace. The `[\s]*$` part matches any trailing whitespace at the end of the file.
-  - `$1;$2`: This replacement inserts a semicolon after the namespace name and retains the captured contents.
-- Second pattern cleans up excessive blank lines
-  - `(\r?\n\s*){3,}`: This pattern matches three or more consecutive blank lines.
-  - "`n`n": This replacement reduces the matched blank lines to two newlines.
+    ```powershell
+        # Convert namespace syntax
+        $newContent = $content -replace '(namespace [^\s{]+)\s*\{(\r?\n[\s\S]+?)\}[\s]*$', '$1;$2'
+        # Clean up extra blank lines
+        $newContent = $newContent -replace '(\r?\n\s*){3,}', "`n`n"
+    ```
+    The core conversion using regex patterns:
+    - First pattern converts traditional namespace to file-scoped
+      - `(namespace [^\s{]+)\s*\{(\r?\n[\s\S]+?)\}[\s]*$`: This pattern matches the traditional namespace declaration and captures the namespace name and its contents. The `namespace [^\s{]+` part matches the namespace keyword followed by the namespace name. The `\s*\{` part matches any whitespace followed by an opening brace. The `(\r?\n[\s\S]+?)\}` part captures the contents of the namespace, including newlines, until the closing brace. The `[\s]*$` part matches any trailing whitespace at the end of the file.
+      - `$1;$2`: This replacement inserts a semicolon after the namespace name and retains the captured contents.
+    - Second pattern cleans up excessive blank lines
+      - `(\r?\n\s*){3,}`: This pattern matches three or more consecutive blank lines.
+      - "`n`n": This replacement reduces the matched blank lines to two newlines.
 
 6. **File Update**
-```powershell
-    if ($newContent -ne $content) {
-        $newContent | Set-Content $file.FullName -NoNewline
-        # ...logging code...
-    }
-```
-Saves the changes only if the content was actually modified.
+    ```powershell
+        if ($newContent -ne $content) {
+            $newContent | Set-Content $file.FullName -NoNewline
+            # ...logging code...
+        }
+    ```
+    Saves the changes only if the content was actually modified.
 
 7. **Summary Output**
-```powershell
-Write-Host "`nConversion Complete!" -ForegroundColor Cyan
-Write-Host "Files converted: $converted" -ForegroundColor Green
-Write-Host "Files skipped: $skipped" -ForegroundColor Yellow
-```
-Provides a summary of the conversion process.
+    ```powershell
+    Write-Host "`nConversion Complete!" -ForegroundColor Cyan
+    Write-Host "Files converted: $converted" -ForegroundColor Green
+    Write-Host "Files skipped: $skipped" -ForegroundColor Yellow
+    ```
+    Provides a summary of the conversion process.
 
 ## Example Transformation
 ```csharp
