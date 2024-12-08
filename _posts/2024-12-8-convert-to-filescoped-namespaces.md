@@ -27,10 +27,11 @@ With over 6000 classes to convert, manual modification wasn't practical. After a
 ```powershell
 Write-Host "Starting namespace conversion script..." -ForegroundColor Cyan
 
-# Find and exclude .NET Standard 2.0 projects
+## Find and exclude .NET Standard 2.0 projects
 $projectFiles = Get-ChildItem -Path . -Filter *.csproj -Recurse
 $excludeDirs = @()
 ```
+
 This section initializes the script and creates an array to store directories to exclude.
 
 2. **Finding .NET Standard Projects**
