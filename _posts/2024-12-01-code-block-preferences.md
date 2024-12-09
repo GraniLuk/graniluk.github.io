@@ -246,66 +246,66 @@ A lambda expression is considered unnecessary when all of the following conditio
 
 1. The expression includes a method invocation
 
-```csharp
-// Unnecessary
-numbers.Where(x => Console.WriteLine(x));
-// Better
-numbers.Where(Console.WriteLine);
-```
-
+    ```csharp
+    // Unnecessary
+    numbers.Where(x => Console.WriteLine(x));
+    // Better
+    numbers.Where(Console.WriteLine);
+    ```
 
 2. The lambda expression has the same number and order of parameters as the method invocation
 
-```csharp
-// Unnecessary
-list.Select(item => Convert.ToString(item));
-// Better
-list.Select(Convert.ToString);
-```
+    ```csharp
+    // Unnecessary
+    list.Select(item => Convert.ToString(item));
+    // Better
+    list.Select(Convert.ToString);
+    ```
 
 3. The method invocation has no side effects
 
-```csharp
-// Keep the lambda (has side effects due to logging)
-items.Where(x => { Log(x); return IsValid(x); });
-// Can be simplified (no side effects)
-items.Where(x => IsValid(x));
-```
+    ```csharp
+    // Keep the lambda (has side effects due to logging)
+    items.Where(x => { Log(x); return IsValid(x); });
+    // Can be simplified (no side effects)
+    items.Where(x => IsValid(x));
+    ```
 
 4. The lambda expression isn't assigned to a non-delegate type
 
-```csharp
-// Keep the lambda (assigned to Expression<Func<T>>)
-Expression<Func<int, bool>> expr = x => x > 0;
-// Can be simplified (assigned to delegate type)
-Func<int, bool> func = x => x > 0;
-```
+    ```csharp
+    // Keep the lambda (assigned to Expression<Func<T>>)
+    Expression<Func<int, bool>> expr = x => x > 0;
+    // Can be simplified (assigned to delegate type)
+    Func<int, bool> func = x => x > 0;
+    ```
+
 5. If the invocation is a generic method, the type arguments are supplied
 
-```csharp
-// Unnecessary
-items.Select(x => JsonSerializer.Deserialize<Person>(x));
-// Better
-items.Select(JsonSerializer.Deserialize<Person>);
-```
+    ```csharp
+    // Unnecessary
+    items.Select(x => JsonSerializer.Deserialize<Person>(x));
+    // Better
+    items.Select(JsonSerializer.Deserialize<Person>);
+    ```
 
 6. The invoked method's return type can be converted to the lambda expression's return type
 
-```csharp
-// Keep the lambda (return type conversion needed)
-Func<string, int?> parser = s => int.TryParse(s, out int n) ? n : null;
-// Can be simplified (return types match)
-Func<int, string> converter = x => x.ToString();
-```
+    ```csharp
+    // Keep the lambda (return type conversion needed)
+    Func<string, int?> parser = s => int.TryParse(s, out int n) ? n : null;
+    // Can be simplified (return types match)
+    Func<int, string> converter = x => x.ToString();
+    ```
 
 7. There's only one applicable method in the method group
 
-```csharp
-// Keep the lambda (multiple overloads of Parse)
-strings.Select(s => int.Parse(s));
-// Can be simplified (only one ToString() overload applies)
-numbers.Select(n => n.ToString());
-```
+    ```csharp
+    // Keep the lambda (multiple overloads of Parse)
+    strings.Select(s => int.Parse(s));
+    // Can be simplified (only one ToString() overload applies)
+    numbers.Select(n => n.ToString());
+    ```
 
 #### Options
 
