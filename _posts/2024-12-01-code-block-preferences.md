@@ -226,7 +226,7 @@ public class ExampleClass
 To refactor existing code and apply the preferred namespace declaration style, you can use Visual Studio's Code Cleanup feature:
 
 1. **Set Remove unnecessary imports or usings section in Code Cleanup profile**
-![Apply using statement preferences](/assets/img/week202450/applyNamespace.png)
+![Apply namespace preferences](/assets/img/week202450/applyNamespace.png)
 
 2. **[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
@@ -345,17 +345,14 @@ Func<int, int> square = (int x) => { return x * x; };
 
 To refactor existing code and remove unnecessary lambda expressions, you can use Visual Studio's Code Cleanup feature:
 
-1. Open Visual Studio.
-2. Go to `Edit` > `Advanced` > `Format Document`.
-3. Alternatively, you can use the Code Cleanup feature:
-   - Click on the broom icon at the bottom of the editor.
-   - Select the profile that includes "Remove unnecessary lambda expression".
+1. **Set Remove unnecessary imports or usings section in Code Cleanup profile**
+![Apply method group conversion preferences](/assets/img/week202450/ApplyMethodGroup.png)
 
-<!-- ![Remove unnecessary lambda expression](path/to/screenshot.png) -->
+2. **[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file.
 
 ### Convert to Top-Level Statements (IDE0210)
 
