@@ -407,19 +407,11 @@ namespace ExampleNamespace
 
 #### How to Refactor Existing Code?
 
-To refactor existing code and convert traditional `Main` methods to top-level statements, you can use Visual Studio's Code Cleanup feature:
-
-1. Open Visual Studio.
-2. Go to `Edit` > `Advanced` > `Format Document`.
-3. Alternatively, you can use the Code Cleanup feature:
-   - Click on the broom icon at the bottom of the editor.
-   - Select the profile that includes "Convert to top-level statements".
-
-<!-- ![Convert to top-level statements](path/to/screenshot.png) -->
+To refactor existing code and convert traditional `Main` methods to top-level statements, you can use do it manually, since it's only one 'program.cs' file in project.
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
-To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file:
+To ensure that new code is properly formatted, set the severity of the rule to warning or error in your `.editorconfig` file.
 
 ### Convert to 'Program.Main' Style Program (IDE0211)
 
@@ -474,15 +466,7 @@ Console.WriteLine("Hello, World!");
 
 #### How to Refactor Existing Code?
 
-To refactor existing code and convert top-level statements back to the traditional `Program.Main` style, you can use Visual Studio's Code Cleanup feature:
-
-1. Open Visual Studio.
-2. Go to `Edit` > `Advanced` > `Format Document`.
-3. Alternatively, you can use the Code Cleanup feature:
-   - Click on the broom icon at the bottom of the editor.
-   - Select the profile that includes "Convert to 'Program.Main' style program".
-
-<!-- ![Convert to 'Program.Main' style program](path/to/screenshot.png) -->
+To refactor existing code and convert traditional `Main` methods to top-level statements, you can use do it manually, since it's only one 'program.cs' file in project.
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -542,15 +526,9 @@ public class Person
 
 #### How to Refactor Existing Code?
 
-To refactor existing code and convert traditional constructors to primary constructors, you can use Visual Studio's Code Cleanup feature:
+To refactor existing code and convert traditional constructors to primary constructors, you can use Visual Studio's quick action feature:
 
-1. Open Visual Studio.
-2. Go to `Edit` > `Advanced` > `Format Document`.
-3. Alternatively, you can use the Code Cleanup feature:
-   - Click on the broom icon at the bottom of the editor.
-   - Select the profile that includes "Use primary constructor".
-
-<!-- ![Use primary constructor](path/to/screenshot.png) -->
+![Use primary constructor](/assets/img/week202450/usePrimaryConstructor.png)
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
@@ -620,15 +598,9 @@ public class Example
 
 #### How to Refactor Existing Code?
 
-To refactor existing code and convert traditional lock statements to `System.Threading.Lock`, you can use Visual Studio's Code Cleanup feature:
+To refactor existing code and convert traditional lock statements to `System.Threading.Lock`, you can use Visual Studio's quick action feature:
 
-1. Open Visual Studio.
-2. Go to `Edit` > `Advanced` > `Format Document`.
-3. Alternatively, you can use the Code Cleanup feature:
-   - Click on the broom icon at the bottom of the editor.
-   - Select the profile that includes "Prefer 'System.Threading.Lock'".
-
-<!-- ![Prefer 'System.Threading.Lock'](path/to/screenshot.png) -->
+![Use `System.Threading.Lock`](/assets/img/week202450/useLock.png)
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
