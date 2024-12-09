@@ -21,6 +21,63 @@ With over 6000 classes to convert, manual modification wasn't practical. After a
 - Preserves documentation comments and formatting
 - Provides detailed logging of the conversion process
 
+## The Script 
+
+```powershell
+Write-Host "Starting namespace conversion script..." -ForegroundColor Cyan
+
+# Find directories containing .NET Standard 2.0 projects
+$projectFiles = Get-ChildItem -Path . -Filter *.csproj -Recurse
+$excludeDirs = @()
+
+foreach ($proj in $projectFiles) {
+    $content = Get-Content $proj.FullName -Raw
+    if ($content -match '<TargetFramework>netstandard2.0</TargetFramework>') {
+        Write-Host "Excluding .NET Standard 2.0 project: $($proj.FullName)" -ForegroundColor Yellow
+        $excludeDirs += $proj.Directory.FullName
+    }
+}
+
+# Get all .cs files excluding .NET Standard 2.0 project directories
+$files = Get-ChildItem -Path . -Filter *.cs -Recurse | 
+    Where-Object { 
+        $file = $_
+        -not ($excludeDirs | Where-Object { $file.FullName.StartsWith($_) })
+    }
+
+Write-Host "Found $($files.Count) .cs files to process (excluding .NET Standard 2.0 projects)" -ForegroundColor Green
+
+$converted = 0
+$skipped = 0
+
+foreach ($file in $files) {
+    Write-Host "`nProcessing: $($file.FullName)" -ForegroundColor Yellow
+    $content = Get-Content $file.FullName -Raw
+    
+    if ($content -match "namespace .+;") {
+        Write-Host "  Skipped: Already using file-scoped namespace" -ForegroundColor Gray
+        $skipped++
+        continue
+    }
+
+    $newContent = $content -replace '(namespace [^\s{]+)\s*\{(\r?\n[\s\S]+?)\}[\s]*$', '$1;$2'
+    $newContent = $newContent -replace '(\r?\n\s*){3,}', "`n`n"
+    
+    if ($newContent -ne $content) {
+        $newContent | Set-Content $file.FullName -NoNewline
+        Write-Host "  Success: Converted to file-scoped namespace" -ForegroundColor Green
+        $converted++
+    } else {
+        Write-Host "  Skipped: No namespace found or no changes needed" -ForegroundColor Gray
+        $skipped++
+    }
+}
+
+Write-Host "`nConversion Complete!" -ForegroundColor Cyan
+Write-Host "Files converted: $converted" -ForegroundColor Green
+Write-Host "Files skipped: $skipped" -ForegroundColor Yellow
+```
+
 ## The Script Explained
 
 1. **Initial Setup and Project Filtering**
