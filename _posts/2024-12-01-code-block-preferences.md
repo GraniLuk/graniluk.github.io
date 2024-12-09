@@ -240,6 +240,18 @@ To ensure that new code is properly formatted, set the severity of the rule to w
 
 The `IDE0200` rule removes unnecessary lambda expressions, simplifying the code and improving readability.
 
+#### When is a Lambda Expression Unnecessary?
+
+A lambda expression is considered unnecessary when all of the following conditions are met:
+
+1. The expression includes a method invocation
+2. The lambda expression has the same number and order of parameters as the method invocation
+3. The method invocation has no side effects
+4. The lambda expression isn't assigned to a non-delegate type
+5. If the invocation is a generic method, the type arguments are supplied
+6. The invoked method's return type can be converted to the lambda expression's return type
+7. There's only one applicable method in the method group
+
 #### Options
 
 The `IDE0200` rule has two possible options: `true` and `false`.
