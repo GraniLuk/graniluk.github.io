@@ -225,13 +225,12 @@ public class ExampleClass
 
 To refactor existing code and apply the preferred namespace declaration style, you can use Visual Studio's Code Cleanup feature:
 
-1. Open Visual Studio.
-2. Go to `Edit` > `Advanced` > `Format Document`.
-3. Alternatively, you can use the Code Cleanup feature:
-   - Click on the broom icon at the bottom of the editor.
-   - Select the profile that includes "Namespace declaration preferences".
+1. **Set Remove unnecessary imports or usings section in Code Cleanup profile**
+![Apply using statement preferences](/assets/img/week202450/applyNamespace.png)
 
-<!-- ![Namespace declaration preferences](path/to/screenshot.png) -->
+2. **[Run Code Cleanup On Solution](/assets/img/week202448/runCodeCleanUpOnSolution.png)**
+
+I had a problem to refactor my repository with this option, so I created a script for that, [it's described in this article:](https://graniluk.github.io/posts/convert-to-filescoped-namespaces/)
 
 #### How to Make Sure That New Code Will Be Properly Formatted?
 
