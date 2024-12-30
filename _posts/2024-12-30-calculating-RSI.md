@@ -4,7 +4,7 @@ date: 2024-12-30 12:00:00 +0100
 categories: [Trading, Technical Analysis]
 tags: [trading, technical analysis, RSI, Indicators, python]
 image:
-  path: /assets/img/week202450/notepadOnDesk.png
+  path: /assets/img/week202450/technicalAnalysis.png
   alt: code blocks
 ---
 
