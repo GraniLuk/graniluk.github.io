@@ -1,6 +1,6 @@
 ---
 title: Automating Work Item Access from Git Branches
-date: 2025-02-09 12:00:00 +0100
+date: 2025-02-09 00:00:00 +0100
 categories: [Development, Automation]
 tags: [powershell, azure-devops, git, automation, productivity]
 image:
