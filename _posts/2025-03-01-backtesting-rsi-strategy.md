@@ -18,6 +18,37 @@ The Relative Strength Index (RSI) is a momentum oscillator that measures the spe
 - RSI > 70: Potentially overbought
 - RSI < 30: Potentially oversold
 
+### RSI Calculation Details
+
+In this implementation, I calculate RSI using daily candles and Exponential Moving Average (EMA). Here's the specific calculation method:
+
+```python
+def calculate_rsi_using_EMA(series, period=14):
+    # Calculate price changes
+    delta = series.diff()
+
+    # Separate gains and losses
+    gain = delta.where(delta > 0, 0)
+    loss = -delta.where(delta < 0, 0)
+
+    # Calculate EMA of gains and losses
+    avg_gain = calculate_ema(gain, period)
+    avg_loss = calculate_ema(loss, period)
+
+    # Calculate RS
+    rs = avg_gain / avg_loss
+
+    # Calculate RSI
+    rsi = 100 - (100 / (1 + rs))
+    return rsi
+```
+
+Key aspects of this implementation:
+- Uses daily closing prices
+- Employs EMA instead of simple moving average (SMA)
+- Default period of 14 days
+- Smooths gains and losses using EMA for more responsive signals
+
 You can read more about RSI in [my recent post](https://graniluk.github.io/posts/calculating-RSI/): 
 
 ## What is Backtesting?
