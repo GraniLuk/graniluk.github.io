@@ -62,6 +62,36 @@ My implementation focuses on:
 2. Using take-profit (TP) and stop-loss (SL) levels for exit conditions
 3. Testing various parameter combinations to find optimal settings
 
+## Testing Parameters and Data Scope
+
+### Data Coverage
+The backtesting was performed on 15 different cryptocurrencies:
+- Major Cryptocurrencies: BTC, ETH, XRP, SOL, DOT
+- DeFi & Ecosystem Tokens: ATOM, TON, OSMO
+- Exchange: KCS, NEXO
+- Layer 1 & 2 Solutions: HBAR, FLOW
+- Emerging Projects: AKT, DYM, VIRTUAL
+
+For each cryptocurrency, I analyzed daily candles from the last 5 years, providing a comprehensive dataset across different market conditions.
+
+### Parameter Ranges
+The strategy was tested across multiple parameter combinations:
+
+```python
+# Parameter ranges for grid search
+rsi_range = range(20, 41)  # RSI values from 20 to 40
+tp_values = ["1.05", "1.1", "1.15", "1.2"]  # Take profit levels: 5% to 20%
+sl_values = ["1.05", "1.1", "1.15", "1.2"]  # Stop loss levels: 5% to 20%
+days_options = [0, 1]  # Days to wait after signal
+```
+
+This comprehensive grid search resulted in testing:
+- 21 different RSI values
+- 4 take-profit levels
+- 4 stop-loss levels
+- 2 timing options
+- Total combinations per cryptocurrency: 672
+
 ## Key Components of the Script
 
 ### Trade Signal Generation
