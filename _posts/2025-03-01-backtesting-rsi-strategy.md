@@ -98,12 +98,10 @@ This comprehensive grid search resulted in testing:
 
 ```python
 # Signal generation based on RSI
-df["signal"] = (df["RSI"] <= rsi_value) & (
-    df["RSI"].shift(daysAfterToBuy) > rsi_value
-)
+df["signal"] = (df["RSI"] <= rsi_value) & (df["RSI"].shift(1) > rsi_value)
 ```
 
-This code identifies entry points when RSI crosses below our threshold and then moves back above it after a specified number of days.
+This code identifies entry points when RSI crosses below our threshold.
 
 ### Trade Management
 
