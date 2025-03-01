@@ -62,6 +62,12 @@ My implementation focuses on:
 2. Using take-profit (TP) and stop-loss (SL) levels for exit conditions
 3. Testing various parameter combinations to find optimal settings
 
+### Trading Rules
+- Fixed investment amount of $1,000 per trade
+- Only one position can be open at a time
+- New trades can only be opened after the previous position is closed (either by hitting TP or SL)
+- Entry occurs on the next day's opening price after a signal is generated
+
 ## Testing Parameters and Data Scope
 
 ### Data Coverage
