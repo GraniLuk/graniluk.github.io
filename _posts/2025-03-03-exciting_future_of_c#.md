@@ -1,7 +1,7 @@
 ---
 
 title: "Exciting future of C#, what's ahead for us"  
-date: 2025-03-03 12:00:00 +0100  
+date: 2025-03-03 00:00:00 +0100  
 categories: [.NET, C#]  
 tags: [csharp, type unions, primary constructors, pattern matching]  
 image:  
@@ -15,12 +15,14 @@ In a recent [interview on Nick Chapsas’ YouTube channel](https://www.youtube.c
 ## Primary Constructors Dilemma
 
 Mads explained that primary constructors were designed to reduce boilerplate by moving parameter declarations directly into the class header, but this comes at a cost.  
-> "Primary constructor parameters, if used outside of construction, become part of the object's state (like fields). People want to make their object state readonly, but can't do that directly with primary constructor parameters."
+> "Primary constructor parameters, if used outside of construction, become part of the object's state (like fields). People want to make their object state readonly, but can't do that directly with primary constructor parameters. The problem is there are two possible features that both involve readonly on primary constructor parameters, but with different meanings:  
+>
+> - Make the primary constructor parameter a readonly field.  
+> - Allow readonly parameters everywhere (including primary constructors).  
+>
+> These have different semantics (e.g., can you assign to them during construction?). We're not ready to choose."
 
-The issue is that when you define a class with a primary constructor, the parameters automatically create hidden fields that are mutable by default. This behavior contrasts with the common pattern where constructor parameters are explicitly assigned to readonly fields, ensuring immutability and catching accidental state changes at compile time. Mads mentioned that there are two possible—but semantically different—solutions:  
-
-- Making the primary constructor parameters automatically readonly (thus matching the expectation of immutability).  
-- Allowing readonly parameters everywhere in the language, which poses new questions regarding assignment during construction.
+The issue is that when you define a class with a primary constructor, the parameters automatically create hidden fields that are mutable by default. This behavior contrasts with the common pattern where constructor parameters are explicitly assigned to readonly fields, ensuring immutability and catching accidental state changes at compile time. The dilemma Microsoft faced was whether to make primary constructor parameters automatically readonly, matching the expectation of immutability, or to allow readonly parameters everywhere in the language, which introduces new questions regarding assignment during construction.
 
 For example, compare the two approaches:
 
@@ -126,5 +128,3 @@ This style emphasizes an exhaustive check over a known set of cases, making it s
 ## Conclusion
 
 The interview with Mads Torgersen underscores several exciting ideas for the future of C#. Primary constructors promise more concise syntax at the expense of introducing potential mutability issues, type unions aim to bring a more natural object-oriented approach to discriminated unions, and pattern matching offers a powerful alternative to virtual methods by enforcing exhaustiveness in handling type cases. Together, these innovations highlight the C# team’s effort to blend the best of functional and object-oriented programming into a more expressive language.
-
-This overview reflects some of the most thought-provoking parts of the interview and offers a glimpse into where C# is headed. Enjoy exploring these concepts and stay tuned for more updates on the evolving future of C#.
