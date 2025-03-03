@@ -5,7 +5,7 @@ date: 2025-03-03 00:00:00 +0100
 categories: [.NET, C#]  
 tags: [csharp, type unions, primary constructors, pattern matching]  
 image:  
-  path: /assets/img/Visual_Studio_Icon.png  
+  path: /assets/img/week202504/G.webp  
   alt: Params Collections in C#  
 
 ---
