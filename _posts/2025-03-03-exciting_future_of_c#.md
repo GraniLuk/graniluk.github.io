@@ -10,7 +10,7 @@ image:
 
 ---
 
-In a recent interview on Nick Chapsas’ YouTube channel, C# Lead Designer Mads Torgersen offered a deep dive into exciting upcoming features in C#, discussing long-standing challenges and potential futures for the language. In this post, we’ll look at three topics that stood out: the dilemma with primary constructors, the vision for type unions, and the interplay between pattern matching and virtual methods.
+In a recent [interview on Nick Chapsas’ YouTube channel](https://www.youtube.com/watch?v=T9UqIkuGnuo), C# Lead Designer Mads Torgersen offered a deep dive into exciting upcoming features in C#, discussing long-standing challenges and potential futures for the language. In this post, we’ll look at three topics that stood out: the dilemma with primary constructors, the vision for type unions, and the interplay between pattern matching and virtual methods.
 
 ## Primary Constructors Dilemma
 
