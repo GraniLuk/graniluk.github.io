@@ -95,9 +95,9 @@ My implementation focuses on:
 The backtesting was performed on 15 different cryptocurrencies:
 
 - **Major Cryptocurrencies**: BTC, ETH, XRP, SOL, DOT.
-- **DeFi \& Ecosystem Tokens**: ATOM, TON, OSMO.
+- **DeFi & Ecosystem Tokens**: ATOM, TON, OSMO.
 - **Exchange Tokens**: KCS, NEXO.
-- **Layer 1 \& 2 Solutions**: HBAR, FLOW.
+- **Layer 1 & 2 Solutions**: HBAR, FLOW.
 - **Emerging Projects**: AKT, DYM, VIRTUAL.
 
 For each cryptocurrency, I analyzed daily candles from the last 5 years, providing a comprehensive dataset across different market conditions.
