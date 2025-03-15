@@ -153,15 +153,15 @@ sl_price = entry_price * sl_value
 
 if current_high >= tp_price:
 
-    outcome = "TP"
+    outcome = "TP"
 
-    close_price = current_high
+    close_price = current_high
 
 elif current_low <= sl_price:
 
-    outcome = "SL"
+    outcome = "SL"
 
-    close_price = current_low
+    close_price = current_low
 
 ```
 
