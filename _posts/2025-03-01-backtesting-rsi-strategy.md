@@ -4,7 +4,7 @@ date: 2025-03-15 08:00:00 +0100
 categories: [Trading, Technical Analysis]
 tags: [trading, technical analysis, RSI, Indicators, python]
 image:
-  path: /assets/img/week202450/technicalAnalysis.png
+  path: /assets/img/technical_analysis/backtesting_logo.png
   alt: code blocks
 ---
   
