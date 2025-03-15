@@ -11,17 +11,18 @@ image:
 
 ## Introduction
 
-In this post, I'll share my Python script for backtesting a trading strategy based on the Relative Strength Index (RSI). We'll explore the implementation, methodology, and results of testing this strategy across multiple cryptocurrency symbols.
+In this article, I’ll walk you through the process of backtesting a trading strategy based on the Relative Strength Index (RSI). We’ll cover the implementation details, methodology, and results of testing this strategy across multiple cryptocurrency symbols. By the end, you’ll have a clear understanding of how to evaluate and optimize an RSI-based trading strategy using Python.
+
 ## What is RSI?
 
-The Relative Strength Index (RSI) is a momentum oscillator that measures the speed and magnitude of recent price changes to evaluate overbought or oversold conditions. It oscillates between 0 and 100, with traditional interpretation considering:
+The Relative Strength Index (RSI) is a popular momentum oscillator that measures the speed and magnitude of recent price changes to identify overbought or oversold conditions in a market. It oscillates between 0 and 100, with traditional thresholds interpreted as follows:
 
 - RSI > 70: Potentially overbought
 
 - RSI < 30: Potentially oversold
 ### RSI Calculation Details
 
-In this implementation, I calculate RSI using daily candles and Rolling Moving Average (RMA), which matches TradingView's calculation method. Here's the specific calculation method:
+In this implementation, I calculate RSI using daily candles and the Rolling Moving Average (RMA), which aligns with TradingView’s calculation method. Below is the Python function used:
 
 ```python
 def calculate_rsi_using_RMA(series, periods=14):
@@ -50,7 +51,7 @@ def calculate_rsi_using_RMA(series, periods=14):
 
 Key aspects of this implementation:
 - Uses daily closing prices
-- Employs RMA (Rolling Moving Average) for more accurate TradingView compatibility
+- Employs RMA for compatibility with TradingView.
 - Default period of 14 days
 - Handles edge cases where gains or losses are zero
 - Uses `ewm()` with `adjust=False` to calculate proper RMA
@@ -58,78 +59,71 @@ Key aspects of this implementation:
 You can read more about RSI in [my recent post](https://graniluk.github.io/posts/calculating-RSI/):
 ## What is Backtesting?
 
-Backtesting is the process of testing a trading strategy using historical data to simulate how it would have performed in the past. This helps evaluate the strategy's effectiveness before risking real money.
+Backtesting involves simulating a trading strategy on historical data to evaluate its performance. It’s an essential step in determining whether a strategy is worth implementing in live markets.
+
+## Why Backtest?
+1. **Risk-Free Evaluation**: Test strategies without risking real money.
+2. **Optimization**: Fine-tune parameters for better performance.
+3. **Insights**: Understand how strategies perform under different market conditions.
 
 ## Strategy Overview
 
 
 My implementation focuses on:
 
-1. Entering positions when RSI falls below a certain threshold
+1. **Entry Condition**: Enter a position when RSI rise above a certain threshold.
+2. **Exit Conditions**:
+    - Take-profit (TP): Exit when the price reaches a predefined profit level.
+    - Stop-loss (SL): Exit when the price falls to a predefined loss level.
+3. **Parameter Optimization**: Test various combinations of RSI thresholds, TP levels, SL levels, and entry timing.
 
-2. Using take-profit (❤️) and stop-loss (💀) levels for exit conditions
-
-3. Testing various parameter combinations to find optimal settings
 
 ### Trading Rules
 
-- Fixed investment amount of $1,000 per trade
+- Fixed investment amount: **\$1,000 per trade**.
+- Only one position can be open at a time.
+- A new trade can only be initiated after the previous position is closed (via TP or SL).
+- Entry occurs at the opening price one or two days after signal generation.
 
-- Only one position can be open at a time
 
-- New trades can only be opened after the previous position is closed (either by hitting TP or SL)
-
-- The entry point is the opening price one to two days following signal generation.
+---
 
 ## Testing Parameters and Data Scope
-
 
 ### Data Coverage
 
 The backtesting was performed on 15 different cryptocurrencies:
 
-- Major Cryptocurrencies: BTC, ETH, XRP, SOL, DOT
-
-- DeFi & Ecosystem Tokens: ATOM, TON, OSMO
-
-- Exchange: KCS, NEXO
-
-- Layer 1 & 2 Solutions: HBAR, FLOW
-
-- Emerging Projects: AKT, DYM, VIRTUAL
+- **Major Cryptocurrencies**: BTC, ETH, XRP, SOL, DOT.
+- **DeFi \& Ecosystem Tokens**: ATOM, TON, OSMO.
+- **Exchange Tokens**: KCS, NEXO.
+- **Layer 1 \& 2 Solutions**: HBAR, FLOW.
+- **Emerging Projects**: AKT, DYM, VIRTUAL.
 
 For each cryptocurrency, I analyzed daily candles from the last 5 years, providing a comprehensive dataset across different market conditions.
+
 ### Parameter Ranges
 
-The strategy was tested across multiple parameter combinations:
+The strategy was tested across multiple parameter combinations using grid search:
 
 ```python
-
 # Parameter ranges for grid search
-
-rsi_range = range(20, 40)  # RSI values from 20 to 40
-
-tp_values = ["1.05", "1.1", "1.15", "1.2"]  # Take profit levels: 5% to 20%
-
-sl_values = ["1.05", "1.1", "1.15", "1.2"]  # Stop loss levels: 5% to 20%
-
-days_options = [0, 1]  # Days to wait after signal
-
+rsi_range = range(20, 40)         # RSI values from 20 to 40
+tp_values = ["1.05", "1.1", "1.15", "1.2"]   # Take-profit levels (5% to 20%)
+sl_values = ["1.05", "1.1", "1.15", "1.2"]   # Stop-loss levels (5% to 20%)
+days_options = [0, 1]             # Days to wait after signal
 ```
 
+This resulted in testing:
 
-This comprehensive grid search resulted in testing:
+- **21 RSI values**
+- **4 take-profit levels**
+- **4 stop-loss levels**
+- **2 timing options**
 
-- 21 different RSI values
+Total combinations per cryptocurrency: **672**.
 
-- 4 take-profit levels
-
-- 4 stop-loss levels
-
-- 2 timing options
-
-- Total combinations per cryptocurrency: 672
-
+---
 ## Key Components of the Script
 
 ### Trade Signal Generation
@@ -197,10 +191,9 @@ The grid search tests multiple parameter combinations to find the most profitabl
 
 ## Results
 
-## TOP 20
-After running the grid search across 15 cryptocurrencies with 672 parameter combinations each, here are the best 20 results:
+### Top Performers
 
-# Cryptocurrency Trading Strategy Results
+After testing all combinations across 15 cryptocurrencies, here are the top-performing configurations:
 
 | rsi_value | tp_value | sl_value | daysAfterToBuy | total_profit | trades | TP_ratio    | TP_hits | SL_hits | symbol_name |
 | --------- | -------- | -------- | -------------- | ------------ | ------ | ----------- | ------- | ------- | ----------- |
@@ -226,27 +219,19 @@ After running the grid search across 15 cryptocurrencies with 672 parameter comb
 | 39        | 1.2      | 0.85     | 2              | 4050         | 71     | 0.591549296 | 42      | 29      | XRP         |
 
 
-## RSI Strategy Backtesting Results Analysis
-
-
-This table presents the backtesting results of a trading strategy using the Relative Strength Index (RSI) indicator for XRP and ETH cryptocurrencies. Here's a brief analysis:
 
 ## Key Findings:
 
 1. **Best Performance**: The most profitable configuration (6800 profit units) used RSI=38, take profit=1.2, stop loss=0.8, with entry 2 days after the signal for XRP.
 2. **Parameter Patterns**:
     - RSI values between 37-40 show the best results
-    - Take profit at 1.2x entry price consistently delivers good returns
-    - Stop loss at 0.8 outperforms most configurations
+    - Take-profit at **20% (TP=1.2)** consistently delivered strong results.
+    - Stop-loss at **20% (SL=0.8)** minimized risk effectively.
     - Both 1-day and 2-day delayed entries can be effective
 3. **Success Rates**: The highest win rates (TP_ratio) reach approximately 75-76%, with the best setups achieving 50 winning trades versus just 16 losing trades.
     
 4. **Asset Comparison**: XRP configurations appear more frequently in the top-performing results compared to other assets.
     
-5. **Risk-Reward Balance**: The most profitable configurations also tend to have the best TP_ratio, suggesting that success rate strongly correlates with overall profitability.
-    
-
-The data indicates that an RSI in the 37-40 range with a tight stop loss (0.8) and reasonable take profit (1.2) creates an effective trading strategy, particularly for XRP.
 
 ### Best Performing Parameters
 - Symbol name: XRP
@@ -262,49 +247,22 @@ The data indicates that an RSI in the 37-40 range with a tight stop loss (0.8) a
 - Average days to SL: 19.3
 - Total profit: $7000.00
 
-### Key Insights
-- The strategy performed best during periods of medium volatility
-- Optimal results were achieved with a 1-day delay after signal generation
-- Higher success rate on major cryptocurrencies (BTC, ETH)
-- The 15% take-profit level provided the best balance between profit capture and win rate
-- Stop-loss at 10% effectively limited downside risk while maintaining profitability
-## Results
 
-  
 
-(Here you can add your actual backtest results)
 
-  
 
-### Best Performing Parameters
-
-- RSI Value: XX
-
-- Take Profit: XX%
-
-- Stop Loss: XX%
-
-- Days After Signal: X
-
-  
-
-### Performance Metrics
-
-- Total Trades: XX
-
-- Win Rate: XX%
-
-- Average Profit per Trade: $XX
-
-- Maximum Drawdown: XX%
-
-  
 
 ## Conclusions
 
   
 
-(Add your conclusions based on the actual results)
+The backtesting results demonstrate that an RSI-based strategy can be highly effective when optimized correctly:
+
+- Focus on RSI values in the range of **37–40**.
+- Use broader stop-losses (**SL=0.8**) and reasonable take-profits (**TP=1.2**) for balanced risk-reward outcomes.
+- XRP showed exceptional performance compared to other assets.
+
+---
 
   
 
@@ -314,18 +272,15 @@ The data indicates that an RSI in the 37-40 range with a tight stop loss (0.8) a
 
 Potential enhancements to consider:
 
-1. Adding more technical indicators
-
-2. Implementing position sizing
-
-3. Including trading fees in calculations
-
-4. Testing across different market conditions
+1. Incorporate additional technical indicators for confirmation signals.
+2. Account for trading fees and slippage in calculations.
+3. Test performance under varying market conditions (e.g., bull vs bear markets).
 
   
+
+---
 
 ## Code Repository
 
-  
+The complete code for this backtest is available on my [CryptoMorningReports](https://github.com/GraniLuk/CryptoMorningReports/tree/main/backtesting/rsi). Feel free to explore it and adapt it to your needs!
 
-The complete code is available in my GitHub repository. Feel free to use it and adapt it to your needs!
