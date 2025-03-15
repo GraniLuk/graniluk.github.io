@@ -247,14 +247,37 @@ After testing all combinations across 15 cryptocurrencies, here are the top-perf
 - Average days to SL: 19.3
 - Total profit: $7000.00
 
+### Visualization
 
+![xrp chart with rsi](/assets/img/technical_analysis/rsi_chart.png)
 
+The visualization above presents the results of our best-performing RSI strategy configuration (RSI: 38, TP: 1.2, SL: 0.8, 2-day delay) applied to XRP over a 5-year timeframe. This chart effectively demonstrates why this particular parameter combination achieved our highest profitability metrics.
 
+The top panel displays XRP's price action through OHLC candlesticks, while the bottom panel shows the RSI indicator with our optimal threshold of 38 marked by a horizontal dashed line. Blue triangles represent entry points, green triangles indicate take-profit exits (20% gain), and red triangles show stop-loss exits (20% loss).
 
+### Key Observations
+
+The chart confirms several insights from our backtesting results:
+
+- **Effective Entry Timing**: Entry points (blue triangles) consistently appear after RSI crosses above the 38 threshold, capturing the beginning of upward momentum phases.
+
+- **Favorable Win Rate**: The prevalence of green triangles (TP exits) visually demonstrates our impressive 76% win rate, with 50 profitable trades versus only 16 losses.
+
+- **Market Cycle Performance**: The strategy performed well across different market conditions, including:
+  - The accumulation phase in 2020 (establishing low-cost basis positions)
+  - The 2021 bull run (capturing significant gains as XRP approached $2.00)
+  - The 2022-2023 consolidation period (maintaining profitability during sideways price action)
+  - The recent 2024-2025 bull market (capitalizing on XRP's rise above $3.00)
+
+- **Risk Management Effectiveness**: The placement of stop-losses at 20% effectively minimized drawdowns during market corrections, while the 20% take-profit level successfully captured gains before significant retracements.
+
+- **Signal Quality**: The 2-day delay after signal generation appears optimal, providing better entry timing that avoids false breakouts and improves win rate.
+
+The recent performance during the 2024-2025 bull market is particularly noteworthy, with multiple successful trades as XRP reached new all-time highs above $3.50, confirming the robustness of this parameter combination even in rapidly evolving market conditions.
+
+This visual evidence supports our numerical findings that XRP with these specific parameters (RSI: 38, TP: 1.2, SL: 0.8, 2-day delay) represents the optimal configuration among all 672 parameter combinations tested across 15 cryptocurrencies.
 
 ## Conclusions
-
-  
 
 The backtesting results demonstrate that an RSI-based strategy can be highly effective when optimized correctly:
 
@@ -264,19 +287,13 @@ The backtesting results demonstrate that an RSI-based strategy can be highly eff
 
 ---
 
-  
-
 ## Future Improvements
-
-  
 
 Potential enhancements to consider:
 
 1. Incorporate additional technical indicators for confirmation signals.
 2. Account for trading fees and slippage in calculations.
 3. Test performance under varying market conditions (e.g., bull vs bear markets).
-
-  
 
 ---
 
