@@ -176,13 +176,13 @@ Each trade is managed with predefined take-profit and stop-loss levels.
 
 def run_grid_search_for_symbol(conn, symbol):
 
-    rsi_range = range(20, 41)  # 20 to 40 inclusive
+    rsi_range = range(20, 41)  # 20 to 40 inclusive
 
-    tp_values = [Decimal(val) for val in ["1.05", "1.1", "1.15", "1.2"]]
+    tp_values = [Decimal(val) for val in ["1.05", "1.1", "1.15", "1.2"]]
 
-    sl_values = [Decimal(val) for val in ["1.05", "1.1", "1.15", "1.2"]]
+    sl_values = [Decimal(val) for val in ["1.05", "1.1", "1.15", "1.2"]]
 
-    days_options = [0, 1]
+    days_options = [0, 1]
 
 ```
 
