@@ -14,7 +14,7 @@ image:
 
 Microsoft just dropped a bombshell: TypeScript is getting **10x faster** with a new native compiler, and here’s the kicker—it’s being rewritten in **Go**. Yes, you read that right. Not Rust, not C#, but Go.
 
-If you’ve ever watched TypeScript choke on a large codebase (*cough* VS Code *cough*), you know this is a big deal. The new compiler promises drastic improvements in speed and memory efficiency. Let’s break down why Microsoft made this choice and what it means for you.
+If you’ve ever worked on a large TypeScript codebase in VS Code, you know this is a big deal. The new compiler promises drastic improvements in speed and memory efficiency. Let’s break down why Microsoft made this choice and what it means for you.
 
 ---
 
