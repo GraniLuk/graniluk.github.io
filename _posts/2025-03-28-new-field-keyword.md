@@ -1,12 +1,12 @@
 ---
 
 title: "New contextual keyword in c#"  
-date: 2025-03-29 00:00:00 +0100  
+date: 2025-03-28 00:00:00 +0100  
 categories: [.NET, C#]  
 tags: [csharp, field, contextual word]  
 image:  
-  path: /assets/img/week202504/G.webp  
-  alt:
+  path: /assets/img/week202504/thinkingDev.webp  
+  alt: thinking developer
 
 ---
 
