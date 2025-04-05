@@ -9,8 +9,9 @@ image:
   alt: thinking developer
 ---
 
+# MassTransit's Transition to a Commercial Model: What It Means for .NET Developers
+
 Following the news on Automapper and Mediator, the announcement about MassTransit caught everyone’s attention. MassTransit has long been the go-to solution for enterprise messaging processing and beyond because it was not only robust—it was free. But now, with Version 9, we’re entering a new era.
-## The Announcement Details
 
 MassTransit's team announced that while version 8 will remain open-source under its current Apache 2.0 license, version 9 will move to a commercial licensing model. The transition timeline includes:
 
@@ -39,6 +40,16 @@ gantt
     %% Q3 2025: V9 Pre-releases start (July-Sept)
     %% Q1 2026: V9 Official Release (Jan-Mar)
     %% End of 2026: V8 Official Maintenance Ends (Dec 31)
+```
+
+## Mermaid SVG
+
+```mermaid
+ gantt
+  title  Adding GANTT diagram functionality to mermaid
+  apple :a, 2017-07-20, 1w
+  banana :crit, b, 2017-07-23, 1d
+  cherry :active, c, after b a, 1d
 ```
 
 ## Why the Change?
