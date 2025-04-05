@@ -5,8 +5,9 @@ categories: [.NET, C#]
 tags: [csharp, MassTransit, license]  
 mermaid: true
 image:  
-  path: /assets/img/week202504/extensionApproach.png  
-  alt: thinking developer
+  path: /assets/img/week202504/rocket.png 
+  alt: competition between languages
+
 ---
 
 # MassTransit's Transition to a Commercial Model: What It Means for .NET Developers
