@@ -5,7 +5,7 @@ date: 2025-04-05 00:00:00 +0100
 categories: [.NET, C#]  
 tags: [csharp, extensions, architecture]  
 image:  
-  path: /assets/img/week202504/thinkingDev.webp  
+  path: /assets/img/week202504/extensionApproach.png  
   alt: thinking developer
 
 ---
