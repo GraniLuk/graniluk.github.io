@@ -41,11 +41,6 @@ gantt
     %% End of 2026: V8 Official Maintenance Ends (Dec 31)
 ```
 
-```mermaid
-graph LR
-1((1)) -.-x 2((0)) -.-x 3((2))
-```
-
 ## Why the Change?
 
 The MassTransit team cites several compelling reasons for this transition:
