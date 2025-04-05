@@ -5,7 +5,7 @@ categories: [.NET, C#]
 tags: [csharp, MassTransit, license]  
 mermaid: true
 image:  
-  path: /assets/img/week202504/rocket.png 
+  path: /assets/img/week202504/massTransitPaid.png
   alt: competition between languages
 
 ---
