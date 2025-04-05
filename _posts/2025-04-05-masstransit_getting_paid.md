@@ -1,12 +1,12 @@
 ---
 title: "MassTransit's Transition to a Commercial Model: What It Means for .NET Developers"
-description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
-author: cotes
-date: 2025-04-04 11:33:00 +0800
-categories: [Blogging, Demo]
-tags: [typography]
-math: true
+date: 2025-04-05 00:00:00 +0100  
+categories: [.NET, C#]  
+tags: [csharp, MassTransit, license]  
 mermaid: true
+image:  
+  path: /assets/img/week202504/massTransitPaid.png
+  alt: competition between languages
 ---
 
 ## Headings
@@ -40,16 +40,6 @@ gantt
     %% Q3 2025: V9 Pre-releases start (July-Sept)
     %% Q1 2026: V9 Official Release (Jan-Mar)
     %% End of 2026: V8 Official Maintenance Ends (Dec 31)
-```
-
-## Mermaid SVG
-
-```mermaid
- gantt
-  title  Adding GANTT diagram functionality to mermaid
-  apple :a, 2017-07-20, 1w
-  banana :crit, b, 2017-07-23, 1d
-  cherry :active, c, after b a, 1d
 ```
 
 ## Why the Change?
