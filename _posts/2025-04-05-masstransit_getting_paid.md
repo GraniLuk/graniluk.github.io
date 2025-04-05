@@ -40,6 +40,11 @@ gantt
     %% End of 2026: V8 Official Maintenance Ends (Dec 31)
 ```
 
+```mermaid
+graph LR
+1((1)) -.-x 2((0)) -.-x 3((2))
+```
+
 ## Why the Change?
 
 The MassTransit team cites several compelling reasons for this transition:
@@ -66,7 +71,7 @@ MassTransit's announcement comes alongside similar moves from other prominent .N
 
 The timing of these announcements—particularly coming shortly after the controversial FluentAssertions pricing model of $130 per developer per year announced earlier—has raised eyebrows in the .NET community. Some developers have expressed surprise, especially given that Jimmy Bogard had previously stated he would "never commercialize mediator" just months before his announcement.
 
-![[/assets/img/week202504/jimmyNever.jpg]]
+![Jimmy post](/assets/img/week202504/jimmyNever.jpg)
 
 ## Commercial Model Speculation
 
