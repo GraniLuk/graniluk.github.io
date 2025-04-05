@@ -6,6 +6,7 @@ tags: [csharp, MassTransit, license]
 image:  
   path: /assets/img/week202504/extensionApproach.png  
   alt: thinking developer
+mermaid: true
 ---
 
 Following the news on Automapper and Mediator, the announcement about MassTransit caught everyone’s attention. MassTransit has long been the go-to solution for enterprise messaging processing and beyond because it was not only robust—it was free. But now, with Version 9, we’re entering a new era.
