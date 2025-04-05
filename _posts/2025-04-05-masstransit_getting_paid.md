@@ -5,7 +5,6 @@ author: cotes
 date: 2025-04-04 11:33:00 +0800
 categories: [Blogging, Demo]
 tags: [typography]
-pin: true
 math: true
 mermaid: true
 ---
