@@ -9,17 +9,17 @@ image:
   alt: competition between languages
 ---
 
-## Headings
+# MassTransit V9 Goes Commercial: What .NET Developers Need to Know
 
-Following the news on Automapper and Mediator, the announcement about MassTransit caught everyone’s attention. MassTransit has long been the go-to solution for enterprise messaging processing and beyond because it was not only robust—it was free. But now, with Version 9, we’re entering a new era.
+## The TL;DR: V8 Stays Free, V9 Goes Commercial
 
-MassTransit's team announced that while version 8 will remain open-source under its current Apache 2.0 license, version 9 will move to a commercial licensing model. The transition timeline includes:
+MassTransit has been a cornerstone of .NET messaging for years, valued for being both powerful and free (under the Apache 2.0 license). That's changing with the upcoming Version 9.
 
-- Q3 2025: MassTransit v9 prerelease packages available to early adopters
-- Q1 2026: Official release of v9 under the commercial license
-- End of 2026: Conclusion of official maintenance for MassTransit v8
+Here's the breakdown:
 
-During this transition period, the team has committed to providing security patches and community support for v8 users, ensuring organizations have time to adapt to the new model
+*   **MassTransit v8:** Remains open-source under Apache 2.0. You can continue using it freely. Official maintenance (security patches, community support) will continue until the **end of 2026**.
+*   **MassTransit v9:** Will be released under a **commercial license**. Early access begins in Q3 2025, with the official release planned for Q1 2026.
+  
 
 ```mermaid
 gantt
@@ -52,43 +52,49 @@ The MassTransit team cites several compelling reasons for this transition:
 
 3. **Resource Requirements**: The growing adoption has created demand for dedicated full-time development resources, enterprise-grade support, and a sustainable funding model to drive continued innovation.
 
-## Impact on Developers and Organizations
+## How Does This Affect You?
 
-For current MassTransit users, the impact varies depending on your situation:
+The impact depends on how you use MassTransit:
 
-- **Version 8 Users**: You can continue using v8 with no changes as it remains open-source and available. Security patches and community support will continue through the transition period.
+*   **Using MassTransit v8:** You can continue using v8 under the Apache 2.0 license indefinitely. You'll receive security patches and community support until the end of 2026. For many, sticking with v8 might be perfectly viable.
+*   **Have an Active Support Agreement:** Your existing agreement will grant you a license for MassTransit v9 for the remainder of its term.
+*   **Need/Want v9 Features:** If you require the new features, performance improvements, or enterprise capabilities planned for v9 (or need support beyond 2026), you'll need to purchase a commercial license.
 
-- **Support Agreement Holders**: If you currently have a support agreement, you'll be granted a license for MassTransit v9 through the remainder of your support period.
+## Part of a Bigger Picture in .NET Open Source
 
-- **Enterprise Users**: Organizations seeking new features, performance enhancements, and enterprise-focused capabilities will need to consider the commercial licensing options for v9.
+This isn't an isolated event. Around the same time, Jimmy Bogard announced commercialization plans for AutoMapper and MediatR, two other widely used .NET libraries. This trend highlights the increasing difficulty of sustaining complex, critical open-source projects purely on volunteer effort or donations, especially when they become heavily relied upon by commercial enterprises.
 
-## Part of a Broader Trend
+The timing, shortly after the community discussion around FluentAssertions' proposed $130/dev/year model, has certainly fueled debate. Some developers noted the shift, especially regarding MediatR, given past statements about keeping it free.
 
-MassTransit's announcement comes alongside similar moves from other prominent .NET open-source projects. Jimmy Bogard, creator of AutoMapper and MediatR, also announced plans to commercialize these libraries around the same time. This growing trend reflects the challenges of maintaining complex open-source projects long-term without sustainable funding models.
+![Jimmy Bogard's previous statement on not commercializing MediatR](/assets/img/week202504/jimmyNever.jpg)
+*Context: A previous statement regarding MediatR's commercialization.*
 
-The timing of these announcements—particularly coming shortly after the controversial FluentAssertions pricing model of $130 per developer per year announced earlier—has raised eyebrows in the .NET community. Some developers have expressed surprise, especially given that Jimmy Bogard had previously stated he would "never commercialize mediator" just months before his announcement.
+These moves signal a potential shift in the .NET open-source landscape, forcing teams to evaluate the long-term sustainability of their dependencies.
 
-![Jimmy post](/assets/img/week202504/jimmyNever.jpg)
+## What Might the Commercial Model Look Like? (Speculation)
 
-## Commercial Model Speculation
+MassTransit hasn't released official pricing yet. However, looking at similar transitions (like IdentityServer) and existing commercial messaging platforms (like NServiceBus), a tiered model seems likely:
 
-While specific pricing details haven't been announced, industry observers speculate that MassTransit will likely adopt a tiered model similar to IdentityServer, with:
+*   **Free Tier:** Possibly for individual developers, open-source projects, or very small companies (e.g., under a certain revenue threshold like $1M/year).
+*   **Paid Tiers:** Required for commercial use in larger organizations, likely varying based on company size, usage volume, or required support levels.
 
-- A free tier for hobbyists and small projects
-- Paid licenses required for companies exceeding a certain revenue threshold (possibly $1 million/year)
+This approach allows continued use for hobbyists and small startups while requiring businesses deriving significant value to contribute financially.
 
-This approach would align with existing commercial messaging solutions like NServiceBus, which has operated as a commercial product since its inception[2].
+## Community Buzz: Understanding, with Questions
 
-## Community Reactions
+The reaction in the .NET community seems largely understanding, if not universally enthusiastic. Many developers acknowledge the immense value MassTransit provides and recognize that sustainable funding is necessary for its continued development and support.
 
-The .NET community's reaction has been mixed but generally understanding. Many developers recognize the value these libraries provide and acknowledge the need for sustainable funding models. As one Reddit commenter noted: "I think they should always have a free tier for companies under a certain amount of revenue... If any business, small or big uses something, it must pay for it. It's absurd not to."
+A common sentiment, echoed on platforms like Reddit, is supportive of commercial models *if* they include fair terms, like a free tier for smaller entities: *"I think they should always have a free tier for companies under a certain amount of revenue... If any business, small or big uses something, it must pay for it."*
 
-## Looking Ahead
+## What Are Your Options Now?
 
-For organizations currently using MassTransit, now is the time to evaluate your options:
+If your organization relies on MassTransit, it's time to strategize:
 
-1. **Continue with v8**: A viable option for many use cases, with community support continuing beyond 2026.
-2. **Plan for v9 adoption**: Consider budgeting for commercial licensing if you need the latest features and enterprise support.
-3. **Explore alternatives**: While migration from MassTransit can be challenging, alternatives like Wolverine (part of the JasperFx stack) or NServiceBus exist for those seeking different options.
+1.  **Stay on v8:** Continue using the free, open-source version. This is a valid path, especially if your feature needs are met and you're prepared for community-only support after 2026.
+2.  **Budget for v9:** If you anticipate needing the latest features, performance updates, or guaranteed long-term support, start planning and budgeting for a commercial v9 license. Keep an eye out for official pricing details.
+3.  **Evaluate Alternatives:** While migrating off a deeply integrated library like MassTransit is a significant undertaking, alternatives exist. Consider options like:
+    *   **Wolverine:** Part of the JasperFx stack, offering messaging and more (also exploring sustainability models).
+    *   **NServiceBus:** A mature, commercial-first enterprise service bus.
+    *   **Built-in Cloud Services:** Leveraging Azure Service Bus, AWS SQS/SNS, or Google Pub/Sub directly with their respective SDKs.
 
-The commercialization of MassTransit represents both a challenge and an opportunity for the .NET ecosystem—ensuring the sustainability of critical infrastructure while potentially reshaping how developers approach open-source dependencies in their enterprise applications.
+**In Conclusion:** MassTransit's move to a commercial model for v9 marks a significant moment for the library and the .NET community. While v8 remains a free option with support through 2026, planning for the future whether sticking with v8, budgeting for v9, or exploring alternatives is crucial for development teams relying on this powerful messaging framework.
