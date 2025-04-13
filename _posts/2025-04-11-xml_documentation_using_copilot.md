@@ -142,10 +142,15 @@ sequenceDiagram
 
 To apply this to your project:
 
-1.  Open GitHub Copilot Chat in your IDE (ensure you're using a version that supports Agent Mode.
-   ![agentMode](/assets//img//week202504/agentMode.png)
+1.  Open GitHub Copilot Chat in your IDE (ensure you're using a version that supports Agent Mode).
 2.  Select the agent mode.
+
+    ![agentMode](/assets/img/week202504/agentMode.png)
+
 3.  Load your customized prompt.
+   
+    ![prompts](/assets//img/week202504/prompts.png)
+    
 4.  Tell Copilot which part of the codebase to focus on. You can often "Add Context..." or mention specific folders. For instance, after the prompt, you might add:
     `Please process the controllers in the 'src/MyApi/Controllers' folder.`
 5.  Copilot will then analyze the files in that folder, using the `#codebase` context to understand dependencies, and start generating documentation based on your prompt.
