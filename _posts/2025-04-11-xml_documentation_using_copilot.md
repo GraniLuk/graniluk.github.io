@@ -1,7 +1,7 @@
 ---
-title: "Drowning in API Docs? Automate C# XML Documentation with GitHub Copilot Agent Mode"
+title: "Drowning in API Docs? Automate it with GitHub Copilot Agent Mode"
 date: 2025-04-11 00:00:00 +0100  
-categories: [.NET, C#]  
+categories: [AI, Documentation]  
 tags: [Copilot, AI, documentation]  
 mermaid: true
 image:  
@@ -9,7 +9,7 @@ image:
   alt: competition between languages
 ---
 
-## Drowning in API Docs? Automate C# XML Documentation with GitHub Copilot Agent Mode
+## Drowning in API Docs? Automate it with GitHub Copilot Agent Mode
 
 **Who is this for?** Developers working on large projects with numerous REST API endpoints.
 
@@ -25,20 +25,20 @@ The breakthrough came with GitHub Copilot. It already lives in my IDE and has in
 
 ### Enter Agent Mode: Beyond Single-File Edits
 
-While Copilot's inline suggestions and standard chat are helpful, they often lack the broad context needed for complex tasks like comprehensive documentation. I experimented with **`@workspace` / Agent Mode** in Copilot Chat and found it significantly more effective for this task.
+While Copilot's inline suggestions and standard chat are helpful, they often lack the broad context needed for complex tasks like comprehensive documentation. I experimented with **Agent Mode** in Copilot Chat and found it significantly more effective for this task.
 
 Unlike basic chat or edit mode, Agent Mode actively searches across your specified workspace (or targeted folders) to find relevant code, dependencies, and context. It doesn't just look at the open file; it digs deeper, mimicking how a developer would explore the codebase to understand relationships between classes and methods. This broader context is crucial for generating meaningful documentation.
 
 ### Crafting the Perfect Prompt for Automation
 
-To ensure consistency across all 700+ methods, I needed a reusable, detailed prompt. Copilot's custom prompt features (`/save` in VS Code, Saved Prompts in Visual Studio) are perfect for this. Here's the prompt I developed:
+To ensure consistency across all 700+ methods, I needed a reusable, detailed prompt. VS Code custom prompt feature is perfect for this. Here's the prompt I developed:
 
 ```text
 Your goal is to update or create XML documentation for C# REST controllers and methods.
 
 Requirements for the documentation:
 - Always add `<summary>` tag with business-oriented description of method
-- Add to the context request and response classes for analyzed REST methods to provide better description
+- Add to the context request and response classes from @codebase for analyzed REST methods to provide better description
 - Always add `<param>` tag for each parameter in method with short description
 - Prefer words: "return" for fetching objects, "save" for creating and "update" for modifying
 - Always add `<returns>` tag if the method doesn't return void with short description
@@ -50,10 +50,58 @@ Requirements for the documentation:
 - If transaction requirement is indicated, then add: "This operation is executed within a transaction database context to ensure data integrity"
 - Focus on business logic not technical details when describing
 
-#codebase
-
 Examples:
-... [Examples from user input included here] ...
+
+```
+
+```csharp
+    /// 
+    ///     Update an existing product's information.
+    /// 
+    /// Product identifier
+    /// Updated product data model
+    /// Updated product entity with changes applied
+    /// 
+    ///     This method updates specific fields of an existing product identified by product ID.
+    ///     The patch operation allows for partial updates to product information such as
+    ///     name, description, price, and inventory status.
+    ///     After saving, the updated product information is retrieved and returned.
+    ///     This operation is executed within a transaction database context to ensure data integrity.
+    ///     The expand and select capabilities (OData) allow for customizing the response content.
+    ///     Access is restricted by the ProductUpdate privilege.
+    /// 
+    [HttpPatch]
+    [Route("{id}")]
+    [ApiOperation(ApiFlag.RequireTransaction)]
+    [EnableExpandSelect]
+    [Authorize(Policy = "ProductUpdate")]
+    public ActionResult UpdateProduct([FromRoute] string id,
+        [FromBody] ProductDto model)
+    {
+        return Ok(_productService.UpdateProduct(id, model));
+    }
+```
+
+```csharp
+ /// 
+    /// Deactivates a user account for security purposes.
+    /// 
+    /// Deactivation request containing the user ID and reason for deactivation
+    /// Response with the result of the deactivation operation
+ /// 
+ /// This method allows administrators to immediately secure the system when a user account is compromised.
+ /// The action helps prevent unauthorized access and potential data breaches.
+ /// Access is restricted by the UserManagement privilege.
+ /// 
+    [HttpPost]
+    [Route("deactivate")]
+    [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
+    [Authorize(Policy = "UserManagement")]
+    [ApiOperation(ApiFlag.RequireTransaction)]
+    public ActionResult DeactivateUser([FromBody] DeactivationRequest request)
+    {
+        return Ok(_userService.DeactivateUser(request));
+    }
 ```
 
 **Key Elements of the Prompt:**
@@ -66,9 +114,9 @@ Examples:
 *   **Crucial Variable:** Includes `#codebase` to instruct Copilot to search the entire workspace for relevant information.
 *   **Examples:** Provides concrete examples of the desired output format and style.
 
-### `#codebase`: Unleashing Full Project Awareness
+### Codebase: Unleashing Full Project Awareness
 
-The `#codebase` variable (or using the `@workspace` participant) is the magic ingredient. It tells Copilot Agent Mode, "Don't just look at the code I explicitly mention; search the entire loaded project/solution for related classes, methods, and context." This allows it to understand dependencies (like services called by the controller, DTOs used, base classes) and generate much more accurate and relevant documentation.
+The `#codebase` variable is the magic ingredient. It tells Copilot Agent Mode, "Don't just look at the code I explicitly mention; search the entire loaded project/solution for related classes, methods, and context." This allows it to understand dependencies (like services called by the controller, DTOs used, base classes) and generate much more accurate and relevant documentation.
 
 ### Workflow Visualization
 
@@ -80,7 +128,7 @@ sequenceDiagram
     participant Copilot as GitHub Copilot Chat
     participant Code as Project Codebase
 
-    Dev->>Copilot: Open Copilot Chat (Agent Mode / @workspace)
+    Dev->>Copilot: Open Copilot Chat in Agent Mode
     Dev->>Copilot: Apply Custom XML Doc Prompt (inc. #codebase)
     Dev->>Copilot: Specify Target Folder(s) (e.g., "Controllers")
     Copilot->>Code: Scan specified folders & related files via #codebase context
@@ -94,9 +142,10 @@ sequenceDiagram
 
 To apply this to your project:
 
-1.  Open GitHub Copilot Chat in your IDE (ensure you're using a version that supports Agent Mode / `@workspace`).
-2.  Activate the agent/workspace context (e.g., type `@workspace` or ensure it's selected).
-3.  Paste your customized prompt (or load a saved one).
+1.  Open GitHub Copilot Chat in your IDE (ensure you're using a version that supports Agent Mode.
+   ![agentMode](/assets//img//week202504/agentMode.png)
+2.  Select the agent mode.
+3.  Load your customized prompt.
 4.  Tell Copilot which part of the codebase to focus on. You can often "Add Context..." or mention specific folders. For instance, after the prompt, you might add:
     `Please process the controllers in the 'src/MyApi/Controllers' folder.`
 5.  Copilot will then analyze the files in that folder, using the `#codebase` context to understand dependencies, and start generating documentation based on your prompt.
@@ -107,7 +156,7 @@ You might need to run this process iteratively, perhaps focusing on one controll
 
 *   **Manual Documentation is Painful:** Large APIs demand significant documentation effort.
 *   **AI Needs Context:** Standard AI tools struggle without access to your full codebase.
-*   **Copilot Agent Mode is Key:** Its ability to search across the workspace (`#codebase` / `@workspace`) provides the necessary context.
+*   **Copilot Agent Mode is Key:** Its ability to search across the workspace `#codebase`provides the necessary context.
 *   **Custom Prompts Ensure Consistency:** Define clear rules and examples for reliable, formatted output.
 *   **Targeted Application:** Focus Copilot on specific folders (like your Controllers directory) for manageable processing.
 
