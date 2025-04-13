@@ -52,47 +52,42 @@ Requirements for the documentation:
 
 Examples:
 
-```
+  /// 
+  ///     Update an existing product's information.
+   /// 
+   /// Product identifier
+   /// Updated product data model
+   /// Updated product entity with changes applied
+   /// 
+   ///     This method updates specific fields of an existing product identified by product ID.
+   ///     The patch operation allows for partial updates to product information such as
+   ///     name, description, price, and inventory status.
+   ///     After saving, the updated product information is retrieved and returned.
+   ///     This operation is executed within a transaction database context to ensure data integrity.
+   ///     The expand and select capabilities (OData) allow for customizing the response content.
+   ///     Access is restricted by the ProductUpdate privilege.
+   /// 
+   [HttpPatch]
+   [Route("{id}")]
+   [ApiOperation(ApiFlag.RequireTransaction)]
+   [EnableExpandSelect]
+   [Authorize(Policy = "ProductUpdate")]
+   public ActionResult UpdateProduct([FromRoute] string id,
+       [FromBody] ProductDto model)
+   {
+       return Ok(_productService.UpdateProduct(id, model));
+   } 
 
-```csharp
-    /// 
-    ///     Update an existing product's information.
-    /// 
-    /// Product identifier
-    /// Updated product data model
-    /// Updated product entity with changes applied
-    /// 
-    ///     This method updates specific fields of an existing product identified by product ID.
-    ///     The patch operation allows for partial updates to product information such as
-    ///     name, description, price, and inventory status.
-    ///     After saving, the updated product information is retrieved and returned.
-    ///     This operation is executed within a transaction database context to ensure data integrity.
-    ///     The expand and select capabilities (OData) allow for customizing the response content.
-    ///     Access is restricted by the ProductUpdate privilege.
-    /// 
-    [HttpPatch]
-    [Route("{id}")]
-    [ApiOperation(ApiFlag.RequireTransaction)]
-    [EnableExpandSelect]
-    [Authorize(Policy = "ProductUpdate")]
-    public ActionResult UpdateProduct([FromRoute] string id,
-        [FromBody] ProductDto model)
-    {
-        return Ok(_productService.UpdateProduct(id, model));
-    }
-```
-
-```csharp
- /// 
-    /// Deactivates a user account for security purposes.
-    /// 
-    /// Deactivation request containing the user ID and reason for deactivation
-    /// Response with the result of the deactivation operation
- /// 
- /// This method allows administrators to immediately secure the system when a user account is compromised.
- /// The action helps prevent unauthorized access and potential data breaches.
- /// Access is restricted by the UserManagement privilege.
- /// 
+  /// 
+  /// Deactivates a user account for security purposes.
+  /// 
+  /// Deactivation request containing the user ID and reason for deactivation
+  /// Response with the result of the deactivation operation
+  /// 
+  /// This method allows administrators to immediately secure the system when a user account is compromised.
+  /// The action helps prevent unauthorized access and potential data breaches.
+  /// Access is restricted by the UserManagement privilege.
+  /// 
     [HttpPost]
     [Route("deactivate")]
     [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
